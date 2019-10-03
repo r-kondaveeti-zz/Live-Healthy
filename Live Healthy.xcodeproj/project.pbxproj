@@ -21,6 +21,7 @@
 		9989D2512346553800849354 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989D2502346553800849354 /* ExtensionDelegate.swift */; };
 		9989D2532346553900849354 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9989D2522346553900849354 /* Assets.xcassets */; };
 		D3094A862346741300AD8E71 /* Live_HealthyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3094A852346741300AD8E71 /* Live_HealthyUITests.swift */; };
+		D3094A9423467B6200AD8E71 /* Live_HealthyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3094A9323467B6200AD8E71 /* Live_HealthyTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,13 @@
 			remoteInfo = "Live Healthy WatchKit Extension";
 		};
 		D3094A882346741300AD8E71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9989D21E2346553500849354 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9989D2252346553500849354;
+			remoteInfo = "Live Healthy";
+		};
+		D3094A9623467B6200AD8E71 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9989D21E2346553500849354 /* Project object */;
 			proxyType = 1;
@@ -93,6 +101,9 @@
 		D3094A832346741300AD8E71 /* Live HealthyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Live HealthyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3094A852346741300AD8E71 /* Live_HealthyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live_HealthyUITests.swift; sourceTree = "<group>"; };
 		D3094A872346741300AD8E71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3094A9123467B6200AD8E71 /* Live HealthyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Live HealthyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3094A9323467B6200AD8E71 /* Live_HealthyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live_HealthyTests.swift; sourceTree = "<group>"; };
+		D3094A9523467B6200AD8E71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +128,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D3094A8E23467B6200AD8E71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -127,6 +145,7 @@
 				9989D23E2346553700849354 /* Live Healthy WatchKit App */,
 				9989D24D2346553800849354 /* Live Healthy WatchKit Extension */,
 				D3094A842346741300AD8E71 /* Live HealthyUITests */,
+				D3094A9223467B6200AD8E71 /* Live HealthyTests */,
 				9989D2272346553500849354 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -138,6 +157,7 @@
 				9989D23A2346553700849354 /* Live Healthy WatchKit App.app */,
 				9989D2492346553800849354 /* Live Healthy WatchKit Extension.appex */,
 				D3094A832346741300AD8E71 /* Live HealthyUITests.xctest */,
+				D3094A9123467B6200AD8E71 /* Live HealthyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,6 +204,15 @@
 				D3094A872346741300AD8E71 /* Info.plist */,
 			);
 			path = "Live HealthyUITests";
+			sourceTree = "<group>";
+		};
+		D3094A9223467B6200AD8E71 /* Live HealthyTests */ = {
+			isa = PBXGroup;
+			children = (
+				D3094A9323467B6200AD8E71 /* Live_HealthyTests.swift */,
+				D3094A9523467B6200AD8E71 /* Info.plist */,
+			);
+			path = "Live HealthyTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +289,24 @@
 			productReference = D3094A832346741300AD8E71 /* Live HealthyUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		D3094A9023467B6200AD8E71 /* Live HealthyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3094A9823467B6200AD8E71 /* Build configuration list for PBXNativeTarget "Live HealthyTests" */;
+			buildPhases = (
+				D3094A8D23467B6200AD8E71 /* Sources */,
+				D3094A8E23467B6200AD8E71 /* Frameworks */,
+				D3094A8F23467B6200AD8E71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3094A9723467B6200AD8E71 /* PBXTargetDependency */,
+			);
+			name = "Live HealthyTests";
+			productName = "Live HealthyTests";
+			productReference = D3094A9123467B6200AD8E71 /* Live HealthyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -283,6 +330,10 @@
 						CreatedOnToolsVersion = 11.0;
 						TestTargetID = 9989D2252346553500849354;
 					};
+					D3094A9023467B6200AD8E71 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 9989D2252346553500849354;
+					};
 				};
 			};
 			buildConfigurationList = 9989D2212346553500849354 /* Build configuration list for PBXProject "Live Healthy" */;
@@ -302,6 +353,7 @@
 				9989D2392346553700849354 /* Live Healthy WatchKit App */,
 				9989D2482346553800849354 /* Live Healthy WatchKit Extension */,
 				D3094A822346741300AD8E71 /* Live HealthyUITests */,
+				D3094A9023467B6200AD8E71 /* Live HealthyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -341,6 +393,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D3094A8F23467B6200AD8E71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -371,6 +430,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D3094A8D23467B6200AD8E71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3094A9423467B6200AD8E71 /* Live_HealthyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -388,6 +455,11 @@
 			isa = PBXTargetDependency;
 			target = 9989D2252346553500849354 /* Live Healthy */;
 			targetProxy = D3094A882346741300AD8E71 /* PBXContainerItemProxy */;
+		};
+		D3094A9723467B6200AD8E71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9989D2252346553500849354 /* Live Healthy */;
+			targetProxy = D3094A9623467B6200AD8E71 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -538,14 +610,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4HKD6YK7Z8;
+				DEVELOPMENT_TEAM = HSVYM28DQ3;
 				INFOPLIST_FILE = "Live Healthy WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yash.Live-Healthy.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yash.Live.Healthy.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -560,14 +632,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4HKD6YK7Z8;
+				DEVELOPMENT_TEAM = HSVYM28DQ3;
 				INFOPLIST_FILE = "Live Healthy WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yash.Live-Healthy.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yash.Live.Healthy.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -583,10 +655,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4HKD6YK7Z8;
+				DEVELOPMENT_TEAM = HSVYM28DQ3;
 				IBSC_MODULE = Live_Healthy_WatchKit_Extension;
 				INFOPLIST_FILE = "Live Healthy WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yash.Live-Healthy.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yash.Live.Healthy.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -602,10 +674,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4HKD6YK7Z8;
+				DEVELOPMENT_TEAM = HSVYM28DQ3;
 				IBSC_MODULE = Live_Healthy_WatchKit_Extension;
 				INFOPLIST_FILE = "Live Healthy WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yash.Live-Healthy.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yash.Live.Healthy.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -620,13 +692,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4HKD6YK7Z8;
+				DEVELOPMENT_TEAM = HSVYM28DQ3;
 				INFOPLIST_FILE = "Live Healthy/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yash.Live-Healthy";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yash.Live.Healthy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -638,13 +710,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4HKD6YK7Z8;
+				DEVELOPMENT_TEAM = HSVYM28DQ3;
 				INFOPLIST_FILE = "Live Healthy/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yash.Live-Healthy";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yash.Live.Healthy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -655,7 +727,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NQHK45X2GV;
+				DEVELOPMENT_TEAM = HSVYM28DQ3;
 				INFOPLIST_FILE = "Live HealthyUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -674,7 +746,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NQHK45X2GV;
+				DEVELOPMENT_TEAM = HSVYM28DQ3;
 				INFOPLIST_FILE = "Live HealthyUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -686,6 +758,46 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Live Healthy";
+			};
+			name = Release;
+		};
+		D3094A9923467B6200AD8E71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HSVYM28DQ3;
+				INFOPLIST_FILE = "Live HealthyTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yash.Live-HealthyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Live Healthy.app/Live Healthy";
+			};
+			name = Debug;
+		};
+		D3094A9A23467B6200AD8E71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HSVYM28DQ3;
+				INFOPLIST_FILE = "Live HealthyTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yash.Live-HealthyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Live Healthy.app/Live Healthy";
 			};
 			name = Release;
 		};
@@ -733,6 +845,15 @@
 			buildConfigurations = (
 				D3094A8A2346741300AD8E71 /* Debug */,
 				D3094A8B2346741300AD8E71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3094A9823467B6200AD8E71 /* Build configuration list for PBXNativeTarget "Live HealthyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3094A9923467B6200AD8E71 /* Debug */,
+				D3094A9A23467B6200AD8E71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
