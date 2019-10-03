@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14868" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch40"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14643"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Live_Healthy_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="1" height="32" alignment="left" text="Walking" textAlignment="center" id="M4g-bh-WUK">
+                            <color key="textColor" red="0.93009407508191722" green="0.706990831315367" blue="0.41450702481370671" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="font" type="italicSystem" weight="bold" pointSize="20"/>
+                        </label>
+                        <group width="1" alignment="left" id="cbD-X1-Lbh">
+                            <items>
+                                <button alignment="left" title="Start" id="16E-an-AqN">
+                                    <color key="titleColor" red="0.93009407509999997" green="0.70699083129999996" blue="0.41450702480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="15"/>
+                                    <connections>
+                                        <action selector="didPressStartStopButton" destination="AgC-eL-Hgc" id="O9h-B8-u0v"/>
+                                    </connections>
+                                </button>
+                                <button alignment="right" title="Dismiss" id="8ju-ea-W2b">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="15"/>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="startStopButton" destination="16E-an-AqN" id="mj8-DY-qFA"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="33.580246913580247" y="30.63451776649746"/>
+        </scene>
+    </scenes>
+</document>
