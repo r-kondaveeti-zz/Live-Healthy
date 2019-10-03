@@ -22,6 +22,9 @@
 		9989D2532346553900849354 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9989D2522346553900849354 /* Assets.xcassets */; };
 		D3094A862346741300AD8E71 /* Live_HealthyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3094A852346741300AD8E71 /* Live_HealthyUITests.swift */; };
 		D3094A9423467B6200AD8E71 /* Live_HealthyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3094A9323467B6200AD8E71 /* Live_HealthyTests.swift */; };
+		D3094AA82346851C00AD8E71 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9989D23F2346553700849354 /* Interface.storyboard */; };
+		D3094AA92346853000AD8E71 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989D24E2346553800849354 /* InterfaceController.swift */; };
+		D3094AAA2346853400AD8E71 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989D2502346553800849354 /* ExtensionDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +107,7 @@
 		D3094A9123467B6200AD8E71 /* Live HealthyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Live HealthyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3094A9323467B6200AD8E71 /* Live_HealthyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live_HealthyTests.swift; sourceTree = "<group>"; };
 		D3094A9523467B6200AD8E71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3094A9F2346842C00AD8E71 /* Live HealthyWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Live HealthyWatchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D3094A9C2346842C00AD8E71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -158,6 +169,7 @@
 				9989D2492346553800849354 /* Live Healthy WatchKit Extension.appex */,
 				D3094A832346741300AD8E71 /* Live HealthyUITests.xctest */,
 				D3094A9123467B6200AD8E71 /* Live HealthyTests.xctest */,
+				D3094A9F2346842C00AD8E71 /* Live HealthyWatchTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -307,6 +319,23 @@
 			productReference = D3094A9123467B6200AD8E71 /* Live HealthyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		D3094A9E2346842C00AD8E71 /* Live HealthyWatchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3094AA42346842D00AD8E71 /* Build configuration list for PBXNativeTarget "Live HealthyWatchTests" */;
+			buildPhases = (
+				D3094A9B2346842C00AD8E71 /* Sources */,
+				D3094A9C2346842C00AD8E71 /* Frameworks */,
+				D3094A9D2346842C00AD8E71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Live HealthyWatchTests";
+			productName = "Live HealthyWatchTests";
+			productReference = D3094A9F2346842C00AD8E71 /* Live HealthyWatchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -334,6 +363,9 @@
 						CreatedOnToolsVersion = 11.0;
 						TestTargetID = 9989D2252346553500849354;
 					};
+					D3094A9E2346842C00AD8E71 = {
+						CreatedOnToolsVersion = 11.0;
+					};
 				};
 			};
 			buildConfigurationList = 9989D2212346553500849354 /* Build configuration list for PBXProject "Live Healthy" */;
@@ -354,6 +386,7 @@
 				9989D2482346553800849354 /* Live Healthy WatchKit Extension */,
 				D3094A822346741300AD8E71 /* Live HealthyUITests */,
 				D3094A9023467B6200AD8E71 /* Live HealthyTests */,
+				D3094A9E2346842C00AD8E71 /* Live HealthyWatchTests */,
 			);
 		};
 /* End PBXProject section */
@@ -400,6 +433,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D3094A9D2346842C00AD8E71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3094AA82346851C00AD8E71 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -435,6 +476,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3094A9423467B6200AD8E71 /* Live_HealthyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3094A9B2346842C00AD8E71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3094AA92346853000AD8E71 /* InterfaceController.swift in Sources */,
+				D3094AAA2346853400AD8E71 /* ExtensionDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -801,6 +851,42 @@
 			};
 			name = Release;
 		};
+		D3094AA52346842D00AD8E71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NQHK45X2GV;
+				INFOPLIST_FILE = "Live HealthyWatchTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yash.Live-HealthyWatchTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D3094AA62346842D00AD8E71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NQHK45X2GV;
+				INFOPLIST_FILE = "Live HealthyWatchTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yash.Live-HealthyWatchTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -854,6 +940,15 @@
 			buildConfigurations = (
 				D3094A9923467B6200AD8E71 /* Debug */,
 				D3094A9A23467B6200AD8E71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3094AA42346842D00AD8E71 /* Build configuration list for PBXNativeTarget "Live HealthyWatchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3094AA52346842D00AD8E71 /* Debug */,
+				D3094AA62346842D00AD8E71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
