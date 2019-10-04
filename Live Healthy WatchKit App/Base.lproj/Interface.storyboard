@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14868" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14868" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="85f-8R-QSA">
     <device id="watch40"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14643"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Menu-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Live_Healthy_WatchKit_App" customModuleProvider="target">
+                <controller identifier="Walking" title="Menu" id="AgC-eL-Hgc" customClass="WalkingInterfaceController" customModule="Live_Healthy_WatchKit_Extension">
                     <items>
                         <label width="1" height="32" alignment="left" text="Walking" textAlignment="center" id="M4g-bh-WUK">
                             <color key="textColor" red="0.93009407508191722" green="0.706990831315367" blue="0.41450702481370671" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -22,23 +22,182 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="15"/>
                                     <connections>
-                                        <action selector="didPressStartStopButton" destination="AgC-eL-Hgc" id="O9h-B8-u0v"/>
+                                        <action selector="didPressStartStop" destination="AgC-eL-Hgc" id="2v8-Ya-Cwz"/>
                                     </connections>
                                 </button>
                                 <button alignment="right" title="Dismiss" id="8ju-ea-W2b">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="15"/>
+                                    <connections>
+                                        <action selector="didPressDismiss" destination="AgC-eL-Hgc" id="rno-5b-b5J"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <label width="136" height="33" alignment="center" textAlignment="center" id="t48-RQ-lh8">
+                            <color key="textColor" red="0.93009407509999997" green="0.70699083129999996" blue="0.41450702480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="19"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="startStopButton" destination="16E-an-AqN" id="uQu-77-TGy"/>
+                        <outlet property="timerLabel" destination="t48-RQ-lh8" id="FeJ-UC-V1H"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-155.30864197530863" y="-17.690355329949238"/>
+        </scene>
+        <!--Live Healthy-->
+        <scene sceneID="zpq-3k-MAh">
+            <objects>
+                <controller identifier="Live Healthy" title="Live Healthy" id="85f-8R-QSA" customClass="InterfaceController" customModule="Live_Healthy_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="Walking" id="DS0-Tw-csg">
+                            <color key="titleColor" red="0.93009407509999997" green="0.70699083129999996" blue="0.41450702480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="italicSystem" weight="bold" pointSize="20"/>
+                            <connections>
+                                <segue destination="AgC-eL-Hgc" kind="push" id="euC-TL-llb"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Running" id="DWy-Rq-wDb">
+                            <color key="titleColor" red="0.93009407509999997" green="0.70699083129999996" blue="0.41450702480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="italicSystem" weight="bold" pointSize="20"/>
+                            <connections>
+                                <segue destination="d1B-zj-zQs" kind="push" id="bbA-LI-pX5"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Swimming" id="0Hn-JS-gec">
+                            <color key="titleColor" red="0.93009407509999997" green="0.70699083129999996" blue="0.41450702480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="italicSystem" weight="bold" pointSize="20"/>
+                            <connections>
+                                <segue destination="d5z-jW-i7I" kind="push" id="wnY-2h-H5T"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Rowing" id="NMy-25-xJZ">
+                            <color key="titleColor" red="0.93009407509999997" green="0.70699083129999996" blue="0.41450702480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="italicSystem" weight="bold" pointSize="20"/>
+                            <connections>
+                                <segue destination="dNT-Fc-GRh" kind="push" id="SZA-jr-XUu"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="186" y="-309"/>
+        </scene>
+        <!--Menu-->
+        <scene sceneID="CJK-lH-LMB">
+            <objects>
+                <controller identifier="Running" title="Menu" id="d1B-zj-zQs" customClass="RunningInterfaceController" customModule="Live_Healthy_WatchKit_Extension">
+                    <items>
+                        <label width="1" height="32" alignment="left" text="Running" textAlignment="center" id="4rJ-2p-EQB">
+                            <color key="textColor" red="0.93009407509999997" green="0.70699083129999996" blue="0.41450702480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="font" type="italicSystem" weight="bold" pointSize="20"/>
+                        </label>
+                        <group width="1" alignment="left" id="h6n-SS-MOc">
+                            <items>
+                                <button alignment="left" title="Start" id="vqa-6W-dge">
+                                    <color key="titleColor" red="0.93009407509999997" green="0.70699083129999996" blue="0.41450702480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="15"/>
+                                    <connections>
+                                        <action selector="didPressStartStopButton" destination="AgC-eL-Hgc" id="VfS-M0-uMP"/>
+                                    </connections>
+                                </button>
+                                <button alignment="right" title="Dismiss" id="KMd-zE-sCm">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="15"/>
+                                    <connections>
+                                        <action selector="didPressRunning" destination="d1B-zj-zQs" id="M84-hk-mPB"/>
+                                    </connections>
                                 </button>
                             </items>
                         </group>
                     </items>
-                    <connections>
-                        <outlet property="startStopButton" destination="16E-an-AqN" id="mj8-DY-qFA"/>
-                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="33.580246913580247" y="30.63451776649746"/>
+            <point key="canvasLocation" x="67" y="-18"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="5Sd-OH-bdY">
+            <objects>
+                <controller id="0Hs-b6-JRA"/>
+            </objects>
+            <point key="canvasLocation" x="288" y="-19"/>
+        </scene>
+        <!--Menu-->
+        <scene sceneID="d6p-Hc-WsC">
+            <objects>
+                <controller identifier="Rowing" title="Menu" id="dNT-Fc-GRh" customClass="RowingInterfaceController" customModule="Live_Healthy_WatchKit_Extension">
+                    <items>
+                        <label width="1" height="32" alignment="left" text="Rowing" textAlignment="center" id="1J6-zv-B55">
+                            <color key="textColor" red="0.93009407509999997" green="0.70699083129999996" blue="0.41450702480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="font" type="italicSystem" weight="bold" pointSize="20"/>
+                        </label>
+                        <group width="1" alignment="left" id="zfC-1o-k18">
+                            <items>
+                                <button alignment="left" title="Start" id="5Gq-Fh-Dhi">
+                                    <color key="titleColor" red="0.93009407509999997" green="0.70699083129999996" blue="0.41450702480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="15"/>
+                                    <connections>
+                                        <action selector="didPressStartStopButton" destination="AgC-eL-Hgc" id="irk-nZ-f94"/>
+                                    </connections>
+                                </button>
+                                <button alignment="right" title="Dismiss" id="ZbG-c5-2me">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="15"/>
+                                    <connections>
+                                        <action selector="didPressRowing" destination="dNT-Fc-GRh" id="E1u-EP-yzy"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="508" y="-19"/>
+        </scene>
+        <!--Menu-->
+        <scene sceneID="pog-vK-yVE">
+            <objects>
+                <controller identifier="Swimming" title="Menu" id="d5z-jW-i7I" customClass="SwimmingInterfaceController" customModule="Live_Healthy_WatchKit_Extension">
+                    <items>
+                        <label width="1" height="32" alignment="left" text="Swimming" textAlignment="center" id="rmc-83-3QC">
+                            <color key="textColor" red="0.93009407509999997" green="0.70699083129999996" blue="0.41450702480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="font" type="italicSystem" weight="bold" pointSize="20"/>
+                        </label>
+                        <group width="1" alignment="left" id="pHQ-yj-YgY">
+                            <items>
+                                <button alignment="left" title="Start" id="L03-Up-CVO">
+                                    <color key="titleColor" red="0.93009407509999997" green="0.70699083129999996" blue="0.41450702480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="15"/>
+                                    <connections>
+                                        <action selector="didPressStartStopButton" destination="AgC-eL-Hgc" id="fyF-xP-v0e"/>
+                                    </connections>
+                                </button>
+                                <button alignment="right" title="Dismiss" id="SSj-Xa-7dl">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="15"/>
+                                    <connections>
+                                        <action selector="didPressSwimming" destination="d5z-jW-i7I" id="1iO-Ie-9SO"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="288" y="-19"/>
         </scene>
     </scenes>
 </document>
