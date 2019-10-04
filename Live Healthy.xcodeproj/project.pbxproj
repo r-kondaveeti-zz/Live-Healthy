@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		994F5E5C2346CC0C007D418E /* WalkingInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F5E5B2346CC0C007D418E /* WalkingInterfaceController.swift */; };
+		994F5E5E2346CC33007D418E /* RunningInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F5E5D2346CC33007D418E /* RunningInterfaceController.swift */; };
+		994F5E602346CC47007D418E /* SwimmingInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F5E5F2346CC47007D418E /* SwimmingInterfaceController.swift */; };
+		994F5E622346CC55007D418E /* RowingInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F5E612346CC55007D418E /* RowingInterfaceController.swift */; };
 		9989D22A2346553500849354 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989D2292346553500849354 /* AppDelegate.swift */; };
 		9989D22C2346553500849354 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989D22B2346553500849354 /* SceneDelegate.swift */; };
 		9989D22E2346553500849354 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989D22D2346553500849354 /* ViewController.swift */; };
@@ -65,6 +69,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		994F5E5B2346CC0C007D418E /* WalkingInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingInterfaceController.swift; sourceTree = "<group>"; };
+		994F5E5D2346CC33007D418E /* RunningInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningInterfaceController.swift; sourceTree = "<group>"; };
+		994F5E5F2346CC47007D418E /* SwimmingInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwimmingInterfaceController.swift; sourceTree = "<group>"; };
+		994F5E612346CC55007D418E /* RowingInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowingInterfaceController.swift; sourceTree = "<group>"; };
 		9989D2262346553500849354 /* Live Healthy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Live Healthy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9989D2292346553500849354 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9989D22B2346553500849354 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +157,10 @@
 		9989D24D2346553800849354 /* Live Healthy WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				994F5E5B2346CC0C007D418E /* WalkingInterfaceController.swift */,
+				994F5E5D2346CC33007D418E /* RunningInterfaceController.swift */,
+				994F5E5F2346CC47007D418E /* SwimmingInterfaceController.swift */,
+				994F5E612346CC55007D418E /* RowingInterfaceController.swift */,
 				9989D24E2346553800849354 /* InterfaceController.swift */,
 				9989D2502346553800849354 /* ExtensionDelegate.swift */,
 				9989D2522346553900849354 /* Assets.xcassets */,
@@ -300,7 +312,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9989D2512346553800849354 /* ExtensionDelegate.swift in Sources */,
+				994F5E5C2346CC0C007D418E /* WalkingInterfaceController.swift in Sources */,
+				994F5E602346CC47007D418E /* SwimmingInterfaceController.swift in Sources */,
+				994F5E5E2346CC33007D418E /* RunningInterfaceController.swift in Sources */,
 				9989D24F2346553800849354 /* InterfaceController.swift in Sources */,
+				994F5E622346CC55007D418E /* RowingInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,14 +482,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4HKD6YK7Z8;
+				DEVELOPMENT_TEAM = HSVYM28DQ3;
 				INFOPLIST_FILE = "Live Healthy WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yash.Live-Healthy.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yash.Live.Healthy.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -488,14 +504,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4HKD6YK7Z8;
+				DEVELOPMENT_TEAM = HSVYM28DQ3;
 				INFOPLIST_FILE = "Live Healthy WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yash.Live-Healthy.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yash.Live.Healthy.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -511,10 +527,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4HKD6YK7Z8;
+				DEVELOPMENT_TEAM = HSVYM28DQ3;
 				IBSC_MODULE = Live_Healthy_WatchKit_Extension;
 				INFOPLIST_FILE = "Live Healthy WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yash.Live-Healthy.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yash.Live.Healthy.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -530,10 +546,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4HKD6YK7Z8;
+				DEVELOPMENT_TEAM = HSVYM28DQ3;
 				IBSC_MODULE = Live_Healthy_WatchKit_Extension;
 				INFOPLIST_FILE = "Live Healthy WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yash.Live-Healthy.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yash.Live.Healthy.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -548,13 +564,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4HKD6YK7Z8;
+				DEVELOPMENT_TEAM = HSVYM28DQ3;
 				INFOPLIST_FILE = "Live Healthy/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yash.Live-Healthy";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yash.Live.Healthy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -566,13 +582,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4HKD6YK7Z8;
+				DEVELOPMENT_TEAM = HSVYM28DQ3;
 				INFOPLIST_FILE = "Live Healthy/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yash.Live-Healthy";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yash.Live.Healthy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
