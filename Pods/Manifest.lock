@@ -1,0 +1,20 @@
+PODS:
+  - AWSCore (2.11.1)
+  - AWSKinesis (2.11.1):
+    - AWSCore (= 2.11.1)
+
+DEPENDENCIES:
+  - AWSKinesis (~> 2.11.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AWSCore
+    - AWSKinesis
+
+SPEC CHECKSUMS:
+  AWSCore: 00093a1ff49b5d6ce5f1e4d83fe301486fc5034d
+  AWSKinesis: 4200e64ad064e9d6dca83fd74a5fc5fcd233c14d
+
+PODFILE CHECKSUM: 273aaf525153a76736104a9e3293327690b6503b
+
+COCOAPODS: 1.5.2
