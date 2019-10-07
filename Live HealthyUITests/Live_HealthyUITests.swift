@@ -33,6 +33,12 @@ class Live_HealthyUITests: XCTestCase {
         
         XCTAssertTrue(app_title.exists);
     }
+    
+    func test_durationLabelAppears_phoneApp(){
+        //This test only works when no data is being passed to the phone
+        let app_durationLabel = app.staticTexts["Label"]
+        XCTAssertTrue(app_durationLabel.exists);
+    }
 
     func testLaunchPerformance() {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {

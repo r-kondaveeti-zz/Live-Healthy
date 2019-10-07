@@ -38,6 +38,16 @@
                ReferencedContainer = "container:Live Healthy.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D3B189CD234B9EC70073DC7A"
+               BuildableName = "Live HealthyMobileTests.xctest"
+               BlueprintName = "Live HealthyMobileTests"
+               ReferencedContainer = "container:Live Healthy.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
