@@ -7,16 +7,19 @@
 //
 
 import XCTest
-@testable import Live_Healthy
+@testable import WatchConnectivity
 
 class Live_HealthyMobileTests: XCTestCase {
-
+    var sut: WCSession!;
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp();
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown();
     }
 
     func testExample() {

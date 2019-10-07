@@ -7,36 +7,39 @@
 //
 
 import XCTest
+import WatchConnectivity
 
 class Live_HealthyUITests: XCTestCase {
-    var app: XCUIApplication!
+    var app: XCUIApplication!;
+    let APP_TITLE = "Live Healthy";
+    let DURATION_LABEL_START_TEXT = "Label";
+    
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
         super.setUp();
+        
+        continueAfterFailure = false
+        
+        //Launch the app
         app = XCUIApplication();
         app.launch();
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+       
         app.terminate();
         super.tearDown();
     }
 
     func test_titleDoesAppear_phoneApp() {
-        let app_title = app.staticTexts["Live Healthy"];
+        let app_title = app.staticTexts[APP_TITLE];
         
         XCTAssertTrue(app_title.exists);
     }
     
-    func test_durationLabelAppears_phoneApp(){
-        //This test only works when no data is being passed to the phone
-        let app_durationLabel = app.staticTexts["Label"]
+    func test_durationLabelAppearsBeforeAnyDataSent_phoneApp(){
+        let app_durationLabel = app.staticTexts[DURATION_LABEL_START_TEXT];
         XCTAssertTrue(app_durationLabel.exists);
     }
 
