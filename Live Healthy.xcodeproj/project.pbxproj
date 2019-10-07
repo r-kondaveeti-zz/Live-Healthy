@@ -22,9 +22,8 @@
 		9989D2532346553900849354 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9989D2522346553900849354 /* Assets.xcassets */; };
 		D3094A862346741300AD8E71 /* Live_HealthyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3094A852346741300AD8E71 /* Live_HealthyUITests.swift */; };
 		D3094A9423467B6200AD8E71 /* Live_HealthyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3094A9323467B6200AD8E71 /* Live_HealthyTests.swift */; };
-		D3094AA82346851C00AD8E71 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9989D23F2346553700849354 /* Interface.storyboard */; };
-		D3094AA92346853000AD8E71 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989D24E2346553800849354 /* InterfaceController.swift */; };
-		D3094AAA2346853400AD8E71 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989D2502346553800849354 /* ExtensionDelegate.swift */; };
+		D354DAAD23468A770044E6AE /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9989D23F2346553700849354 /* Interface.storyboard */; };
+		D354DAAF23468AF50044E6AE /* Live_Healthy_Watch_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D354DAAE23468AF50044E6AE /* Live_Healthy_Watch_UI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +107,7 @@
 		D3094A9323467B6200AD8E71 /* Live_HealthyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live_HealthyTests.swift; sourceTree = "<group>"; };
 		D3094A9523467B6200AD8E71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3094A9F2346842C00AD8E71 /* Live HealthyWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Live HealthyWatchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D354DAAE23468AF50044E6AE /* Live_Healthy_Watch_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live_Healthy_Watch_UI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +212,7 @@
 		D3094A842346741300AD8E71 /* Live HealthyUITests */ = {
 			isa = PBXGroup;
 			children = (
+				D354DAAE23468AF50044E6AE /* Live_Healthy_Watch_UI.swift */,
 				D3094A852346741300AD8E71 /* Live_HealthyUITests.swift */,
 				D3094A872346741300AD8E71 /* Info.plist */,
 			);
@@ -423,6 +424,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D354DAAD23468A770044E6AE /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,7 +439,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3094AA82346851C00AD8E71 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +469,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3094A862346741300AD8E71 /* Live_HealthyUITests.swift in Sources */,
+				D354DAAF23468AF50044E6AE /* Live_Healthy_Watch_UI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,8 +485,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3094AA92346853000AD8E71 /* InterfaceController.swift in Sources */,
-				D3094AAA2346853400AD8E71 /* ExtensionDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
