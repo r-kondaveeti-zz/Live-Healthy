@@ -1,0 +1,162 @@
+
+---
+AWSTemplateFormatVersion: '2010-09-09'
+    
+Resources:
+   
+        
+        
+   # Create Role 
+  S3BucketRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - s3.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+        
+  S3BucketPolicies:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      PolicyName: S3BucketPolicy
+      PolicyDocument:
+        Statement:
+          - Effect: Allow            
+            Action: 's3:*'
+            Resource: !Join 
+              - ''
+              - - 'arn:aws:s3:::'
+                - !Ref MyS3Bucket
+                - /*
+      Roles:
+        - !Ref S3BucketRole
+        
+  # create S3 Bucket
+  MyS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties: 
+        BucketName: health-app-bucket
+        AccessControl: PublicRead
+        
+        
+        
+  # creates the Kinesis Stream
+  KinesisStream:
+    Type: AWS::Kinesis::Stream
+    Properties:
+      Name: HealthApp        
+      RetentionPeriodHours: 24
+      ShardCount: 8
+      
+   # creates the firehose delivery stream   
+  KinesisFirehoseDeliveryStream:
+    Type: AWS::KinesisFirehose::DeliveryStream
+    Properties:
+      DeliveryStreamName: HealthAppFirehose   
+      DeliveryStreamType: KinesisStreamAsSource
+      
+      # set the source configuration
+      KinesisStreamSourceConfiguration:
+        KinesisStreamARN:
+          Fn::GetAtt:
+          - KinesisStream
+          - Arn
+        RoleARN:
+          Fn::GetAtt:
+          - FirehoseDeliveryIAMRole
+          - Arn
+          
+         # configuring the destination as s3 bucket
+      S3DestinationConfiguration:
+        BucketARN: !GetAtt MyS3Bucket.Arn
+        Prefix: cloudformation-test/kinesis-fh
+        BufferingHints:
+           IntervalInSeconds: 60
+           SizeInMBs: 100
+        CloudWatchLoggingOptions:
+          Enabled: 'false'
+        CompressionFormat: UNCOMPRESSED
+        RoleARN:
+          Fn::GetAtt:
+          - FirehoseDeliveryIAMRole
+          - Arn
+    DependsOn:
+    - FirehoseDeliveryIAMPolicy
+   
+   # create role
+  FirehoseDeliveryIAMRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:   
+          Effect: Allow
+          Principal:
+            Service: firehose.amazonaws.com
+          Action: sts:AssumeRole
+          
+       
+   # creating policy for role
+  FirehoseDeliveryIAMPolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: HealthAppPolicy        
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Sid: AllowPublicRead
+          Effect: Allow
+          Action: 
+          - s3:*
+          - s3:AbortMultipartUpload
+          - s3:GetBucketLocation
+          - s3:GetObject
+          - s3:ListBucket
+          - s3:ListBucketMultipartUploads
+          - s3:PutObject
+          Resource: !Join 
+              - ''
+              - - 'arn:aws:s3:::'
+                - !Ref MyS3Bucket
+                - /*
+                                            
+        - Effect: Allow
+          Action:
+          - kinesis:DescribeStream
+          - kinesis:GetShardIterator
+          - kinesis:GetRecords
+          Resource:
+            Fn::GetAtt:
+            - KinesisStream
+            - Arn
+      Roles:
+      - Ref: FirehoseDeliveryIAMRole
+    DependsOn:
+    - KinesisStream
+​
+    # output ARNS 
+Outputs:
+  kinesisStreamArn:
+    Description: Kinesis Stream ARN
+    Value:
+      Fn::GetAtt:
+      - KinesisStream
+      - Arn
+  firehoseDeliveryStreamArn:
+    Description: Firehose Delivery Stream ARN
+    Value:
+      Fn::GetAtt:
+      - KinesisFirehoseDeliveryStream
+      - Arn
+  firehoseDeliveryRoleArn:
+    Description: Firehose Delivery Role ARN
+    Value:
+      Fn::GetAtt:
+      - FirehoseDeliveryIAMRole
+      - Arn
+  
+ 
