@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DA2D189234CEADD00233F7A /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DA2D188234CEADD00233F7A /* awsconfiguration.json */; };
 		994F5E5C2346CC0C007D418E /* WalkingInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F5E5B2346CC0C007D418E /* WalkingInterfaceController.swift */; };
 		994F5E5E2346CC33007D418E /* RunningInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F5E5D2346CC33007D418E /* RunningInterfaceController.swift */; };
 		994F5E602346CC47007D418E /* SwimmingInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F5E5F2346CC47007D418E /* SwimmingInterfaceController.swift */; };
@@ -69,6 +70,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0DA2D188234CEADD00233F7A /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		994F5E5B2346CC0C007D418E /* WalkingInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingInterfaceController.swift; sourceTree = "<group>"; };
 		994F5E5D2346CC33007D418E /* RunningInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningInterfaceController.swift; sourceTree = "<group>"; };
 		994F5E5F2346CC47007D418E /* SwimmingInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwimmingInterfaceController.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		9989D2282346553500849354 /* Live Healthy */ = {
 			isa = PBXGroup;
 			children = (
+				0DA2D188234CEADD00233F7A /* awsconfiguration.json */,
 				9989D2292346553500849354 /* AppDelegate.swift */,
 				9989D22B2346553500849354 /* SceneDelegate.swift */,
 				9989D22D2346553500849354 /* ViewController.swift */,
@@ -271,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DA2D189234CEADD00233F7A /* awsconfiguration.json in Resources */,
 				9989D2362346553600849354 /* LaunchScreen.storyboard in Resources */,
 				9989D2332346553600849354 /* Assets.xcassets in Resources */,
 				9989D2312346553500849354 /* Main.storyboard in Resources */,
