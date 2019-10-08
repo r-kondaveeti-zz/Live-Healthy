@@ -35,7 +35,7 @@
                                 </button>
                             </items>
                         </group>
-                        <label width="136" height="26" alignment="center" textAlignment="center" id="t48-RQ-lh8">
+                        <label width="136" height="33" alignment="center" textAlignment="center" id="t48-RQ-lh8">
                             <color key="textColor" red="0.93009407509999997" green="0.70699083129999996" blue="0.41450702480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="19"/>
                         </label>
@@ -66,7 +66,7 @@
                                 <segue destination="AgC-eL-Hgc" kind="push" id="euC-TL-llb"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="Running" id="DWy-Rq-wDb">
+                        <button width="1" alignment="left" title="Accelerometer" id="DWy-Rq-wDb">
                             <color key="titleColor" red="0.93009407509999997" green="0.70699083129999996" blue="0.41450702480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="font" type="italicSystem" weight="bold" pointSize="20"/>
@@ -100,31 +100,76 @@
             <objects>
                 <controller identifier="Running" title="Menu" id="d1B-zj-zQs" customClass="RunningInterfaceController" customModule="Live_Healthy_WatchKit_Extension">
                     <items>
-                        <label width="1" height="32" alignment="left" text="Running" textAlignment="center" id="4rJ-2p-EQB">
+                        <label width="1" height="32" alignment="left" text="Accelerometer" textAlignment="center" id="4rJ-2p-EQB">
                             <color key="textColor" red="0.93009407509999997" green="0.70699083129999996" blue="0.41450702480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <fontDescription key="font" type="italicSystem" weight="bold" pointSize="20"/>
                         </label>
-                        <group width="1" alignment="left" id="h6n-SS-MOc">
+                        <group width="1" alignment="left" id="MX7-RG-n84">
                             <items>
-                                <button alignment="left" title="Start" id="vqa-6W-dge">
+                                <button alignment="left" title="X:" id="Uo9-3w-NRY">
                                     <color key="titleColor" red="0.93009407509999997" green="0.70699083129999996" blue="0.41450702480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="15"/>
                                     <connections>
-                                        <action selector="didPressStartStopButton" destination="AgC-eL-Hgc" id="VfS-M0-uMP"/>
+                                        <action selector="didPressStartStopButton" destination="AgC-eL-Hgc" id="if7-Uq-jEQ"/>
                                     </connections>
                                 </button>
-                                <button alignment="right" title="Dismiss" id="KMd-zE-sCm">
+                                <button alignment="right" title="Dismiss" id="Z23-fc-t49">
                                     <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="15"/>
                                     <connections>
-                                        <action selector="didPressRunning" destination="d1B-zj-zQs" id="M84-hk-mPB"/>
+                                        <action selector="didPressRunning" destination="d1B-zj-zQs" id="7VT-iH-EzN"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="CUQ-Wj-eYw">
+                            <items>
+                                <button alignment="left" title="Y:" id="8bj-Dw-UOI">
+                                    <color key="titleColor" red="0.93009407509999997" green="0.70699083129999996" blue="0.41450702480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="15"/>
+                                    <connections>
+                                        <action selector="didPressStartStopButton" destination="AgC-eL-Hgc" id="Wca-7e-nQh"/>
+                                    </connections>
+                                </button>
+                                <button alignment="right" title="Dismiss" id="Uwr-Ad-BjB">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="15"/>
+                                    <connections>
+                                        <action selector="didPressRunning" destination="d1B-zj-zQs" id="Wl5-dU-hqI"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="dD9-5G-HDZ">
+                            <items>
+                                <button alignment="left" title="Z:" id="fiE-Ch-KW0">
+                                    <color key="titleColor" red="0.93009407509999997" green="0.70699083129999996" blue="0.41450702480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="15"/>
+                                    <connections>
+                                        <action selector="didPressStartStopButton" destination="AgC-eL-Hgc" id="6eu-wN-4m4"/>
+                                    </connections>
+                                </button>
+                                <button alignment="right" title="Dismiss" id="KwP-4I-Iws">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="15"/>
+                                    <connections>
+                                        <action selector="didPressRunning" destination="d1B-zj-zQs" id="5F4-c4-MXS"/>
                                     </connections>
                                 </button>
                             </items>
                         </group>
                     </items>
+                    <connections>
+                        <outlet property="axisX" destination="Z23-fc-t49" id="lqE-eG-f5B"/>
+                        <outlet property="axisY" destination="Uwr-Ad-BjB" id="EOK-1H-NJE"/>
+                        <outlet property="axisZ" destination="KwP-4I-Iws" id="9R6-uE-20x"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="67" y="-18"/>
@@ -132,7 +177,34 @@
         <!--Interface Controller-->
         <scene sceneID="5Sd-OH-bdY">
             <objects>
-                <controller id="0Hs-b6-JRA"/>
+                <controller id="0Hs-b6-JRA">
+                    <items>
+                        <label width="1" height="32" alignment="left" text="Swimming" textAlignment="center" id="Wcx-eB-tWr">
+                            <color key="textColor" red="0.93009407509999997" green="0.70699083129999996" blue="0.41450702480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="font" type="italicSystem" weight="bold" pointSize="20"/>
+                        </label>
+                        <group width="1" alignment="left" id="qNZ-EI-bHd">
+                            <items>
+                                <button alignment="left" title="Start" id="o0s-Wy-ud6">
+                                    <color key="titleColor" red="0.93009407509999997" green="0.70699083129999996" blue="0.41450702480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="15"/>
+                                    <connections>
+                                        <action selector="didPressStartStopButton" destination="AgC-eL-Hgc" id="ygA-KF-mzz"/>
+                                    </connections>
+                                </button>
+                                <button alignment="right" title="Dismiss" id="uFc-lP-cWD">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="15"/>
+                                    <connections>
+                                        <action selector="didPressRunning" destination="d1B-zj-zQs" id="1zA-tl-vKv"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
             </objects>
             <point key="canvasLocation" x="288" y="-19"/>
         </scene>
