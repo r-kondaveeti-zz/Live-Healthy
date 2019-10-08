@@ -1,18 +1,19 @@
 {
     "dev": {
         "awscloudformation": {
-            "AuthRoleName": "live-healthy-dev-20191003142933-authRole",
-            "UnauthRoleArn": "arn:aws:iam::241296247398:role/live-healthy-dev-20191003142933-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::241296247398:role/live-healthy-dev-20191003142933-authRole",
+            "AuthRoleName": "live-healthy-dev-20191008123336-authRole",
+            "UnauthRoleArn": "arn:aws:iam::241296247398:role/live-healthy-dev-20191008123336-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::241296247398:role/live-healthy-dev-20191008123336-authRole",
             "Region": "us-east-1",
-            "DeploymentBucketName": "live-healthy-dev-20191003142933-deployment",
-            "UnauthRoleName": "live-healthy-dev-20191003142933-unauthRole",
-            "StackName": "live-healthy-dev-20191003142933",
-            "StackId": "arn:aws:cloudformation:us-east-1:241296247398:stack/live-healthy-dev-20191003142933/20fc70a0-e614-11e9-b46e-0e85eb8bafe8"
+            "DeploymentBucketName": "live-healthy-dev-20191008123336-deployment",
+            "UnauthRoleName": "live-healthy-dev-20191008123336-unauthRole",
+            "StackName": "live-healthy-dev-20191008123336",
+            "StackId": "arn:aws:cloudformation:us-east-1:241296247398:stack/live-healthy-dev-20191008123336/c21a6290-e9f1-11e9-b252-12d48e821f84"
         },
         "categories": {
             "auth": {
-                "cognito3e8a71f7": {}
+                "livehealthy1014befe": {},
+                "livehealthy8f4923ee": {}
             }
         }
     }

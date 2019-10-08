@@ -1,13 +1,15 @@
 {
 	"auth": {
-		"cognito3e8a71f7": {
+		"livehealthy8f4923ee": {
 			"service": "Cognito",
-			"providerPlugin": "awscloudformation"
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
 		}
 	},
-	"analytics": {
-		"livehealthy": {
-			"service": "Pinpoint",
+	"analytics": {},
+	"storage": {
+		"s3resource": {
+			"service": "S3",
 			"providerPlugin": "awscloudformation"
 		}
 	}
