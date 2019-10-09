@@ -90,6 +90,9 @@
 		9989D2502346553800849354 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		9989D2522346553900849354 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9989D2542346553900849354 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99989C1A234E3EDC005B4972 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		99989C1B234E3EDC005B4972 /* HealthKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKitUI.framework; path = System/Library/Frameworks/HealthKitUI.framework; sourceTree = SDKROOT; };
+		99989C23234E3EF3005B4972 /* Live Healthy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Live Healthy.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,7 @@
 				9989D23E2346553700849354 /* Live Healthy WatchKit App */,
 				9989D24D2346553800849354 /* Live Healthy WatchKit Extension */,
 				9989D2272346553500849354 /* Products */,
+				99989C19234E3EDC005B4972 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +137,7 @@
 		9989D2282346553500849354 /* Live Healthy */ = {
 			isa = PBXGroup;
 			children = (
+				99989C23234E3EF3005B4972 /* Live Healthy.entitlements */,
 				9989D2292346553500849354 /* AppDelegate.swift */,
 				9989D22B2346553500849354 /* SceneDelegate.swift */,
 				9989D22D2346553500849354 /* ViewController.swift */,
@@ -167,6 +172,15 @@
 				9989D2542346553900849354 /* Info.plist */,
 			);
 			path = "Live Healthy WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		99989C19234E3EDC005B4972 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99989C1A234E3EDC005B4972 /* HealthKit.framework */,
+				99989C1B234E3EDC005B4972 /* HealthKitUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -563,6 +577,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Live Healthy/Live Healthy.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HSVYM28DQ3;
 				INFOPLIST_FILE = "Live Healthy/Info.plist";
@@ -582,6 +597,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Live Healthy/Live Healthy.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HSVYM28DQ3;
 				INFOPLIST_FILE = "Live Healthy/Info.plist";
