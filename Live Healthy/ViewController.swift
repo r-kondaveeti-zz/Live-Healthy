@@ -11,14 +11,6 @@ import WatchConnectivity
 
 class ViewController: UIViewController, WCSessionDelegate {
     
-    @IBAction func UploadData(_ sender: UIButton) {
-        uploadData()
-    }
-    func uploadData(){
-        print("Upload Data")
-        
-        
-    }
     @IBOutlet weak var durationLabel: UILabel!
     
     let session = WCSession.default
@@ -62,7 +54,19 @@ class ViewController: UIViewController, WCSessionDelegate {
             print(value)
         }
     }
+    
 
-
+    @IBAction func uploadData(_ sender: UIButton) {
+        print("Upload Data")
+        if let URL = Bundle.main.url(forResource: "test", withExtension: "json") {
+            print("File founded")
+        }
+        else {
+            print("File not founded")
+        }
+        
+//        AWSManager.shared.uploadFile(fileUrl: URL, fileName: <#T##String#>, contenType: <#T##String#>, progress: <#T##progressBlock?##progressBlock?##(Double) -> Void#>, completion: <#T##completionBlock?##completionBlock?##(Any?, Error?) -> Void#>)
+    }
+    
 }
 

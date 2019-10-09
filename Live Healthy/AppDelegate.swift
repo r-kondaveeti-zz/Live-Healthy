@@ -18,13 +18,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Establish a run-time connection with AWS Mobile Client
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-            AWSDDLog.add(AWSDDTTYLogger.sharedInstance)
-            AWSDDLog.sharedInstance.logLevel = .info
-            // Create AWSMobileClient to connect with AWS
-            return AWSMobileClient.default().interceptApplication(application, didFinishLaunchingWithOptions: launchOptions)
+//            AWSDDLog.add(AWSDDTTYLogger.sharedInstance)
+//            AWSDDLog.sharedInstance.logLevel = .info
+//            // Create AWSMobileClient to connect with AWS
+//          return AWSMobileClient.default().interceptApplication(application, didFinishLaunchingWithOptions: launchOptions)
+        self.initializeAWSConnection()
+        return true
+          
     }
     
-
+    func initializeAWSConnection()  {
+        let poolID = "us-east-1:6844b08e-253d-470a-8069-62a8b10973d7"
+        let credentialsProvider = AWSCognitoCredentialsProvider(regionType: .USEast1, identityPoolId: poolID)
+        let configuration = AWSServiceConfiguration(region: .USEast1
+            , credentialsProvider: credentialsProvider)
+        AWSServiceManager.default()?.defaultServiceConfiguration = configuration
+        print("Connected to AWS")
+    }
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
