@@ -11,6 +11,14 @@ import WatchConnectivity
 
 class ViewController: UIViewController, WCSessionDelegate {
     
+    @IBAction func UploadData(_ sender: UIButton) {
+        uploadData()
+    }
+    func uploadData(){
+        print("Upload Data")
+        
+        
+    }
     @IBOutlet weak var durationLabel: UILabel!
     
     let session = WCSession.default
