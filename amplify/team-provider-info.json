@@ -9,6 +9,11 @@
             "UnauthRoleName": "live-healthy-dev-20191009152747-unauthRole",
             "StackName": "live-healthy-dev-20191009152747",
             "StackId": "arn:aws:cloudformation:us-east-1:241296247398:stack/live-healthy-dev-20191009152747/41e27530-ead3-11e9-8c79-12069a319f62"
+        },
+        "categories": {
+            "auth": {
+                "cognitocc0cfba5": {}
+            }
         }
     }
 }

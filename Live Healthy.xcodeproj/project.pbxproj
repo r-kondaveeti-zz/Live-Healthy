@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D50F8CB234F8F8500A03CA9 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D50F8CA234F8F8500A03CA9 /* awsconfiguration.json */; };
 		82117A808275DD03ED2A01F6 /* Pods_Live_Healthy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81DF80432C3B833BD108D98B /* Pods_Live_Healthy.framework */; };
 		994F5E5C2346CC0C007D418E /* WalkingInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F5E5B2346CC0C007D418E /* WalkingInterfaceController.swift */; };
 		994F5E5E2346CC33007D418E /* RunningInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F5E5D2346CC33007D418E /* RunningInterfaceController.swift */; };
@@ -70,6 +71,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D50F8CA234F8F8500A03CA9 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		2E73090F882501EADE075361 /* Pods-Live Healthy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Live Healthy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Live Healthy/Pods-Live Healthy.debug.xcconfig"; sourceTree = "<group>"; };
 		81DF80432C3B833BD108D98B /* Pods_Live_Healthy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Live_Healthy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F030A51C0F9E85A46BEDEDB /* Pods-Live Healthy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Live Healthy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Live Healthy/Pods-Live Healthy.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		9989D2282346553500849354 /* Live Healthy */ = {
 			isa = PBXGroup;
 			children = (
+				0D50F8CA234F8F8500A03CA9 /* awsconfiguration.json */,
 				9989D2292346553500849354 /* AppDelegate.swift */,
 				9989D22B2346553500849354 /* SceneDelegate.swift */,
 				9989D22D2346553500849354 /* ViewController.swift */,
@@ -305,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D50F8CB234F8F8500A03CA9 /* awsconfiguration.json in Resources */,
 				9989D2362346553600849354 /* LaunchScreen.storyboard in Resources */,
 				9989D2332346553600849354 /* Assets.xcassets in Resources */,
 				9989D2312346553500849354 /* Main.storyboard in Resources */,
@@ -360,8 +364,8 @@
 				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProvider/AWSCognitoIdentityProvider.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProviderASF/AWSCognitoIdentityProviderASF.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSKinesis/AWSKinesis.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
-				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -369,8 +373,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProvider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProviderASF.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSKinesis.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

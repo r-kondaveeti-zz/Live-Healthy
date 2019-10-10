@@ -24,12 +24,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>AWSMobileClient.xcscheme</key>
+		<key>AWSKinesis.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>AWSS3.xcscheme</key>
+		<key>AWSMobileClient.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

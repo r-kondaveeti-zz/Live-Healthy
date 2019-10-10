@@ -1,1 +1,14 @@
-{}
+{
+	"auth": {
+		"cognitocc0cfba5": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation"
+		}
+	},
+	"analytics": {
+		"livehealthy": {
+			"service": "Pinpoint",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}

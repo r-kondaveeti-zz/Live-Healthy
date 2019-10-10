@@ -8,7 +8,7 @@
 
 import UIKit
 import WatchConnectivity
-import AWSS3
+import AWSKinesis
 
 class ViewController: UIViewController, WCSessionDelegate {
     
