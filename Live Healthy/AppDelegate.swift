@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Establish a run-time connection with AWS Mobile Client
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        /** Initialize and push data to Kinesis Stream*/
         initializeAWSConnection()
         AWSMobileClient.default().initialize { (userState, error) in
             if let error = error {
@@ -42,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return nil
         })
         kinesisRecorder.submitAllRecords()
+        /**End of push data to Kinesis Stream*/
         return true
         
     }
