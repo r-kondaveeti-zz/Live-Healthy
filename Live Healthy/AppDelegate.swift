@@ -30,6 +30,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let kinesisRecorder = AWSKinesisRecorder.default()
         let testData = "test_data".data(using: .utf8)
         kinesisRecorder.saveRecord(testData, streamName: "live-health-input")
+        // Create an array to store a batch of objects.
+        var tasks = Array<AWSTask<AnyObject>>()
+        for i in 0...100 {
+            tasks.append(kinesisRecorder.saveRecord(String(format: "Hello Kinesis-%02d", i).data(using: .utf8), streamName: "live-health-input")!)
+        }
+        AWSTask(forCompletionOfAllTasks: tasks).continueOnSuccessWith(block: { (task:AWSTask<AnyObject>) -> AWSTask<AnyObject>? in
+            return kinesisRecorder.submitAllRecords()
+        }).continueWith(block: { (task:AWSTask<AnyObject>) -> Any? in
+            if let error = task.error{
+                print("Error: \(error.localizedDescription)")
+            }
+            return nil
+        })
+
         kinesisRecorder.submitAllRecords()
         return true
         
