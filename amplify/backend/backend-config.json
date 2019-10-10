@@ -1,16 +1,1 @@
-{
-	"auth": {
-		"livehealthy8f4923ee": {
-			"service": "Cognito",
-			"providerPlugin": "awscloudformation",
-			"dependsOn": []
-		}
-	},
-	"analytics": {},
-	"storage": {
-		"s3resource": {
-			"service": "S3",
-			"providerPlugin": "awscloudformation"
-		}
-	}
-}
+{}

@@ -28,12 +28,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func initializeAWSConnection()  {
-        let poolID = "us-east-1:6844b08e-253d-470a-8069-62a8b10973d7"
-        let credentialsProvider = AWSCognitoCredentialsProvider(regionType: .USEast1, identityPoolId: poolID)
-        let configuration = AWSServiceConfiguration(region: .USEast1
-            , credentialsProvider: credentialsProvider)
-        AWSServiceManager.default()?.defaultServiceConfiguration = configuration
+//        let poolID = "us-east-1:6844b08e-253d-470a-8069-62a8b10973d7"
+//        let credentialsProvider = AWSCognitoCredentialsProvider(regionType: .USEast1, identityPoolId: poolID)
+//        let configuration = AWSServiceConfiguration(region: .USEast1
+//            , credentialsProvider: credentialsProvider)
+//        AWSServiceManager.default()?.defaultServiceConfiguration = configuration
+//        print("Connected to AWS")
+        //Setup credentials, see your awsconfiguration.json for the "YOUR-IDENTITY-POOL-ID"
+        let credentialProvider = AWSCognitoCredentialsProvider(regionType: .USEast1 , identityPoolId: "us-east-1:6844b08e-253d-470a-8069-62a8b10973d7")
+
+        //Setup the service configuration
+        let configuration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: credentialProvider)
+
+        //Setup the transfer utility configuration
+        let tuConf = AWSS3TransferUtilityConfiguration()
+        tuConf.isAccelerateModeEnabled = true
+        tuConf.retryLimit = 5
+        tuConf.timeoutIntervalForResource = 5 * 60
+
+        //Register a transfer utility object asynchronously
+        AWSS3TransferUtility.register(
+            with: configuration!,
+            transferUtilityConfiguration: tuConf,
+            forKey: "transfer-utility-with-advanced-options"
+        ) { (error) in
+             if let error = error {
+                 //Handle registration error.
+                print("Registration error \(error.localizedDescription)")
+             }
+        }
+
+        //Look up the transfer utility object from the registry to use for your transfers.
+        let transferUtility:(AWSS3TransferUtility?) = AWSS3TransferUtility.s3TransferUtility(forKey: "transfer-utility-with-advanced-options")
         print("Connected to AWS")
+
     }
     // MARK: UISceneSession Lifecycle
 

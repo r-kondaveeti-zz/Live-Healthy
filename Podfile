@@ -7,7 +7,7 @@ target 'Live Healthy' do
   use_frameworks!
   $awsVersion = '~> 2.11.0'
   pod 'AWSMobileClient', $awsVersion
-  pod 'AWSS3', $awsVersion
+  pod 'AWSKinesis', $awsVersion
 
   # Pods for Live Healthy
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import WatchConnectivity
+import AWSS3
 
 class ViewController: UIViewController, WCSessionDelegate {
     
@@ -55,18 +56,6 @@ class ViewController: UIViewController, WCSessionDelegate {
         }
     }
     
-
-    @IBAction func uploadData(_ sender: UIButton) {
-        print("Upload Data")
-        if let URL = Bundle.main.url(forResource: "test", withExtension: "json") {
-            print("File founded")
-        }
-        else {
-            print("File not founded")
-        }
-        
-//        AWSManager.shared.uploadFile(fileUrl: URL, fileName: <#T##String#>, contenType: <#T##String#>, progress: <#T##progressBlock?##progressBlock?##(Double) -> Void#>, completion: <#T##completionBlock?##completionBlock?##(Any?, Error?) -> Void#>)
-    }
     
 }
 
