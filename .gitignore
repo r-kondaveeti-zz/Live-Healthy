@@ -1,3 +1,5 @@
+
+
 #amplify
 amplify/\#current-cloud-backend
 amplify/.config/local-*
@@ -9,3 +11,16 @@ dist/
 node_modules/
 aws-exports.js
 awsconfiguration.json
+
+## User settings
+xcuserdata/
+
+## App packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+

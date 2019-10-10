@@ -36,7 +36,7 @@ Resources:
   # Always created
     Type: AWS::Cognito::IdentityPool
     Properties: 
-      IdentityPoolName: !If [ShouldNotCreateEnvResources, 'live_healthy_identitypool_f70a8ab9', !Join ['',['live_healthy_identitypool_f70a8ab9', '__', !Ref env]]]
+      IdentityPoolName: !If [ShouldNotCreateEnvResources, 'live_healthy_identitypool_c61455f7', !Join ['',['live_healthy_identitypool_c61455f7', '__', !Ref env]]]
             
       AllowUnauthenticatedIdentities: !Ref allowUnauthenticatedIdentities
        

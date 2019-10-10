@@ -8,6 +8,7 @@
 
 import UIKit
 import WatchConnectivity
+import AWSKinesis
 
 class ViewController: UIViewController, WCSessionDelegate {
     
@@ -54,7 +55,7 @@ class ViewController: UIViewController, WCSessionDelegate {
             print(value)
         }
     }
-
-
+    
+    
 }
 
