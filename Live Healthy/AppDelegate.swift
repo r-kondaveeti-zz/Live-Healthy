@@ -28,8 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         let kinesisRecorder = AWSKinesisRecorder.default()
-        let testData = "test_data".data(using: .utf8)
-        kinesisRecorder.saveRecord(testData, streamName: "live-health-input")
         // Create an array to store a batch of objects.
         var tasks = Array<AWSTask<AnyObject>>()
         for i in 0...100 {
@@ -43,7 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             return nil
         })
-
         kinesisRecorder.submitAllRecords()
         return true
         
