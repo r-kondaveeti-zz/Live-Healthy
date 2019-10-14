@@ -1,0 +1,6 @@
+framework module Pods_Live_Healthy_WatchKit_App {
+  umbrella header "Pods-Live Healthy WatchKit App-umbrella.h"
+
+  export *
+  module * { export * }
+}

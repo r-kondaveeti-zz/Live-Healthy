@@ -1,0 +1,15 @@
+{
+	"auth": {
+		"livehealthyb0e465c1": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	},
+	"analytics": {
+		"LiveHealthy": {
+			"service": "Pinpoint",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}

@@ -1,0 +1,20 @@
+{
+    "appName": "LiveHealthy",
+    "roleName": "pinpointLambdaRole60d9e29e",
+    "cloudWatchPolicyName": "cloudWatchPolicy60d9e29e",
+    "pinpointPolicyName": "pinpointPolicy60d9e29e",
+    "authPolicyName": "pinpoint_amplify_60d9e29e",
+    "unauthPolicyName": "pinpoint_amplify_60d9e29e",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

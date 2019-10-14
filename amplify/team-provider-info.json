@@ -1,0 +1,19 @@
+{
+    "ios": {
+        "awscloudformation": {
+            "AuthRoleName": "livehealthy-ios-20191013143908-authRole",
+            "UnauthRoleArn": "arn:aws:iam::084486557089:role/livehealthy-ios-20191013143908-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::084486557089:role/livehealthy-ios-20191013143908-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "livehealthy-ios-20191013143908-deployment",
+            "UnauthRoleName": "livehealthy-ios-20191013143908-unauthRole",
+            "StackName": "livehealthy-ios-20191013143908",
+            "StackId": "arn:aws:cloudformation:us-east-2:084486557089:stack/livehealthy-ios-20191013143908/205cba80-edf1-11e9-a70a-023006f8d510"
+        },
+        "categories": {
+            "auth": {
+                "livehealthyb0e465c1": {}
+            }
+        }
+    }
+}

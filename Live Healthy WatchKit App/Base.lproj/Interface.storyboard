@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14868" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="85f-8R-QSA">
     <device id="watch40"/>
     <dependencies>
+        <deployment identifier="watchOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14643"/>
     </dependencies>
@@ -22,7 +23,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="15"/>
                                     <connections>
-                                        <action selector="didPressStartStop" destination="AgC-eL-Hgc" id="N2I-2n-746"/>
+                                        <action selector="didPressStartStop" destination="AgC-eL-Hgc" id="mDI-oK-CsF"/>
                                     </connections>
                                 </button>
                                 <button alignment="right" title="Go Back" id="8ju-ea-W2b">
@@ -30,7 +31,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="15"/>
                                     <connections>
-                                        <action selector="didPressGoBack" destination="AgC-eL-Hgc" id="P3r-wn-V5K"/>
+                                        <action selector="didPressDismiss" destination="AgC-eL-Hgc" id="dhy-SR-iLm"/>
                                     </connections>
                                 </button>
                             </items>
@@ -46,8 +47,8 @@
                         </items>
                     </menu>
                     <connections>
-                        <outlet property="startStopButton" destination="16E-an-AqN" id="PKI-JW-J2Q"/>
-                        <outlet property="timerLabel" destination="fod-hU-oXd" id="enb-F5-30U"/>
+                        <outlet property="startStopButton" destination="16E-an-AqN" id="HSf-CZ-E3g"/>
+                        <outlet property="timerLabel" destination="fod-hU-oXd" id="OmI-ir-KlB"/>
                     </connections>
                 </controller>
             </objects>
