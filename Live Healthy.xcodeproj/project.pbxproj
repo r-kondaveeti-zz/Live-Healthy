@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0DF7FFE92354F1DE00DC99C5 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DF7FFE82354F1DE00DC99C5 /* awsconfiguration.json */; };
+		0DF7FFEB2354F98800DC99C5 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DF7FFEA2354F98800DC99C5 /* awsconfiguration.json */; };
 		4DBB6EA9ED2EF5028D9333FA /* Pods_Live_Healthy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E3A6F7E558DDC9A72A91A1 /* Pods_Live_Healthy.framework */; };
 		9989C4E9234F878200F1DAB2 /* MigraineInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989C4E8234F878200F1DAB2 /* MigraineInterfaceController.swift */; };
 		9989D22A2346553500849354 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989D2292346553500849354 /* AppDelegate.swift */; };
@@ -69,7 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0DF7FFE82354F1DE00DC99C5 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
+		0DF7FFEA2354F98800DC99C5 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		88E3A6F7E558DDC9A72A91A1 /* Pods_Live_Healthy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Live_Healthy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9989C4E8234F878200F1DAB2 /* MigraineInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigraineInterfaceController.swift; sourceTree = "<group>"; };
 		9989D2262346553500849354 /* Live Healthy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Live Healthy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,7 +148,7 @@
 		9989D2282346553500849354 /* Live Healthy */ = {
 			isa = PBXGroup;
 			children = (
-				0DF7FFE82354F1DE00DC99C5 /* awsconfiguration.json */,
+				0DF7FFEA2354F98800DC99C5 /* awsconfiguration.json */,
 				99989C23234E3EF3005B4972 /* Live Healthy.entitlements */,
 				9989D2292346553500849354 /* AppDelegate.swift */,
 				9989D22B2346553500849354 /* SceneDelegate.swift */,
@@ -308,7 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DF7FFE92354F1DE00DC99C5 /* awsconfiguration.json in Resources */,
+				0DF7FFEB2354F98800DC99C5 /* awsconfiguration.json in Resources */,
 				9989D2362346553600849354 /* LaunchScreen.storyboard in Resources */,
 				9989D2332346553600849354 /* Assets.xcassets in Resources */,
 				9989D2312346553500849354 /* Main.storyboard in Resources */,
