@@ -15,5 +15,22 @@
                 "livehealthyb0e465c1": {}
             }
         }
+    },
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "livehealthy-dev-20191014130755-authRole",
+            "UnauthRoleArn": "arn:aws:iam::940353667847:role/livehealthy-dev-20191014130755-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::940353667847:role/livehealthy-dev-20191014130755-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "livehealthy-dev-20191014130755-deployment",
+            "UnauthRoleName": "livehealthy-dev-20191014130755-unauthRole",
+            "StackName": "livehealthy-dev-20191014130755",
+            "StackId": "arn:aws:cloudformation:us-east-1:940353667847:stack/livehealthy-dev-20191014130755/8bf67ad0-eead-11e9-b6e9-0e16aabfe77c"
+        },
+        "categories": {
+            "auth": {
+                "livehealthyb0e465c1": {}
+            }
+        }
     }
 }
