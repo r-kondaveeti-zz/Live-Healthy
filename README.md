@@ -1,10 +1,14 @@
-# Live-Healthy (Updated 08-Oct-2019)
+# Live-Healthy (Updated 14-Oct-2019)
 
-Live-Healthy is an applicaiotn which allows a user to track various aspects of their life, such as amount of time spent eating.
+Live Healthy is an Apple Watch and iPhone application which allows a user to track various aspects of their life.
+
+## Current Features:
+Track:
+* The length of a meal
 
 
 ## Requirments:
-Apple Watch (watchOS 6), iPhone (iOS 13), and Mac (macOS 10.14.6 or later)
+Apple Watch (watchOS 5 and later), iPhone (iOS 12.4 and later), and Mac (macOS 10.14.6 or later)
 
 ## Setup:
 1. Clone [this repository](https://github.com/r-kondaveeti/Live-Healthy.git) to your computer.
