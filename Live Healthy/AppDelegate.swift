@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AWSMobileClient
 
 @UIApplicationMain
 @available(iOS 13.0, *)
@@ -14,12 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
 
-
     @available(iOS 13.0, *)
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
+        return AWSMobileClient.default().interceptApplication(application, didFinishLaunchingWithOptions: launchOptions)
     }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return AWSMobileClient.default().interceptApplication(
+            application, open: url,
+            sourceApplication: sourceApplication,
+            annotation: annotation)
+        }
 
     // MARK: UISceneSession Lifecycle
     @available(iOS 13.0, *)

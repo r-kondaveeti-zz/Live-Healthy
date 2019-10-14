@@ -3,4 +3,70 @@
    uuid = "5A857203-2290-4FF4-B097-58AEF9CF1AD6"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "96D44F41-18F3-4315-B7F8-F1217DA643E5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Live Healthy/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "initializeAWSMobileClient()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FB367860-442D-45B4-94B5-B232D60FDE65"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Live Healthy/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "initializeAWSMobileClient()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FB367860-442D-45B4-94B5-B232D60FDE65 - c878123a075e6dc3"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Live_Healthy.ViewController.session(_: __C.WCSession, didReceiveMessage: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; ()"
+                  moduleName = "Live Healthy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/boochi/Desktop/Live%20Healthy/Live%20Healthy/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  uuid = "FB367860-442D-45B4-94B5-B232D60FDE65 - 5d8a497531dc9232"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Live_Healthy.ViewController.session(_: __C.WCSession, didReceiveMessage: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; ()"
+                  moduleName = "Live Healthy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/boochi/Desktop/Live%20Healthy/Live%20Healthy/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "128">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
