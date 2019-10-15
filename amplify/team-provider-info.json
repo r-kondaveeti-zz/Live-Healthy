@@ -32,5 +32,22 @@
                 "cognito69160b84": {}
             }
         }
+    },
+    "kdev": {
+        "awscloudformation": {
+            "AuthRoleName": "livehealthy-kdev-20191015164318-authRole",
+            "UnauthRoleArn": "arn:aws:iam::940353667847:role/livehealthy-kdev-20191015164318-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::940353667847:role/livehealthy-kdev-20191015164318-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "livehealthy-kdev-20191015164318-deployment",
+            "UnauthRoleName": "livehealthy-kdev-20191015164318-unauthRole",
+            "StackName": "livehealthy-kdev-20191015164318",
+            "StackId": "arn:aws:cloudformation:us-east-1:940353667847:stack/livehealthy-kdev-20191015164318/cd480c00-ef94-11e9-8f32-0e0621d8669c"
+        },
+        "categories": {
+            "auth": {
+                "cognitocc7d8a58": {}
+            }
+        }
     }
 }

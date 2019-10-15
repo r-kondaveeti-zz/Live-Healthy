@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func initializeAWSConnection()  {
         //Setup credentials, see your awsconfiguration.json for the "YOUR-IDENTITY-POOL-ID"
         let credentialsProvider = AWSCognitoCredentialsProvider(
-            regionType: .USEast1, identityPoolId: "us-east-1:21fc92c8-6994-449d-b0cf-0cc351ba400e")
+            regionType: .USEast1, identityPoolId: "us-east-1:7098dcc8-a4c0-4114-b4a5-414610b54e8a")
         //Setup the service configuration
         let configuration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: credentialsProvider)
         AWSServiceManager.default()?.defaultServiceConfiguration = configuration

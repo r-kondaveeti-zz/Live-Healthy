@@ -1,10 +1,10 @@
 {
-    "appName": "LiveHealthy",
-    "roleName": "pinpointLambdaRole60d9e29e",
-    "cloudWatchPolicyName": "cloudWatchPolicy60d9e29e",
-    "pinpointPolicyName": "pinpointPolicy60d9e29e",
-    "authPolicyName": "pinpoint_amplify_60d9e29e",
-    "unauthPolicyName": "pinpoint_amplify_60d9e29e",
+    "appName": "livehealthy",
+    "roleName": "pinpointLambdaRole71085c30",
+    "cloudWatchPolicyName": "cloudWatchPolicy71085c30",
+    "pinpointPolicyName": "pinpointPolicy71085c30",
+    "authPolicyName": "pinpoint_amplify_71085c30",
+    "unauthPolicyName": "pinpoint_amplify_71085c30",
     "authRoleName": {
         "Ref": "AuthRoleName"
     },
