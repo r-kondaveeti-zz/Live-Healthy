@@ -51,7 +51,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         session.activate()
         //MotionManager
         motionManager = CMMotionManager()
-        motionManager.deviceMotionUpdateInterval = 1.0 / 50
+        motionManager.deviceMotionUpdateInterval = 1.0 / 1.0
         motionManager.startDeviceMotionUpdates(to: OperationQueue.current!) { (deviceMotion: CMDeviceMotion?, error: Error?) in
                 if error != nil {
                    print("Encountered error: \(error!)")
@@ -91,8 +91,15 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
                                  deviceMotion.attitude.pitch,
                                  deviceMotion.attitude.yaw)
 
-        self.message = ["accelerometer": gravityStr]
+        self.message = ["accelerometer": userAccelStr]
         self.messageToPhone();
+        self.message = ["xCoordinates": String(deviceMotion.userAcceleration.x)]
+        self.messageToPhone();
+        self.message = ["yCoordinates": String(deviceMotion.userAcceleration.y)]
+        self.messageToPhone();
+        self.message = ["zCoordinates": String(deviceMotion.userAcceleration.z)]
+        self.messageToPhone();
+        
     }
     
 }

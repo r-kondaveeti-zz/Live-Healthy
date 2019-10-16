@@ -10,14 +10,24 @@ import WatchConnectivity
 import CoreMotion
 import HealthKit
 import AWSMobileClient
+import AWSUserPoolsSignIn
 
 @available(iOS 13.0, *)
 class ViewController: UIViewController, WCSessionDelegate {
     
-    let healthStore = HKHealthStore();
-    let cornerRadius : CGFloat = 15.0
-   
+    //Accelerometer coordinates
+    var xCoordinates: String!
+    var yCoordinates: String!
+    var zCoordinates: String!
     
+    //Unique id for the device
+    let deviceId = UIDevice.current.identifierForVendor?.uuidString
+    
+    let healthStore = HKHealthStore();
+    let pool = AWSCognitoUserPoolsSignInProvider.sharedInstance()
+    .getUserPool()
+    
+    @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var backGroundLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var logOutLabel: UIButton!
@@ -27,6 +37,22 @@ class ViewController: UIViewController, WCSessionDelegate {
     @IBOutlet weak var enableHealthAccessButton: UIButton!
     
     let session = WCSession.default
+    
+    override func viewWillAppear(_ animated: Bool) {
+        backGroundLabel.center.x  -= view.bounds.width
+        infoLabel.center.x -= view.bounds.width
+        mealTimerLabel.center.x -= view.bounds.width
+        accelerometerLabel.center.x -= view.bounds.width
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 0.5) {
+            self.backGroundLabel.center.x  += self.view.bounds.width
+            self.infoLabel.center.x += self.view.bounds.width
+            self.mealTimerLabel.center.x += self.view.bounds.width
+            self.accelerometerLabel.center.x += self.view.bounds.width
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +76,7 @@ class ViewController: UIViewController, WCSessionDelegate {
             session.activate()
             }
         
+        self.userDetails()
         }
     
     func initializeAWSMobileClient() {
@@ -59,7 +86,6 @@ class ViewController: UIViewController, WCSessionDelegate {
             case .signedIn:
                 print("Logged In")
                 print("Cognito Identity Id (authenticated): \(AWSMobileClient.default().identityId!)")
-                
             case .signedOut:
                 print("Logged Out")
                 DispatchQueue.main.async {
@@ -90,10 +116,6 @@ class ViewController: UIViewController, WCSessionDelegate {
         })
     }
     
-//    func showSignOut() {
-//        AWSMobileClient.default().signOut()
-//    }
-    
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         switch activationState {
         case .activated:
@@ -105,7 +127,6 @@ class ViewController: UIViewController, WCSessionDelegate {
         default:
             print("This is default in switch on the iPhone")
         }
-        
     }
     
     func sessionDidBecomeInactive(_ session: WCSession) {
@@ -123,6 +144,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                 print("This is in session on iPhone")
                 self.mealTimerLabel.text = mealValue;
                 print(mealValue)
+                    print(self.generateJSON())
             }
         }
         
@@ -131,6 +153,21 @@ class ViewController: UIViewController, WCSessionDelegate {
                 // Run UI Updates
                 // update label
                 self.accelerometerLabel.text = accelerometerValue;
+            }
+        }
+        
+        DispatchQueue.main.async {
+            if let xCoordinates = message["xCoordinates"] as? String {
+                self.xCoordinates = xCoordinates;
+                print(xCoordinates)
+            }
+            DispatchQueue.main.async {
+                if let yCoordinates = message["yCoordinates"] as? String {
+                    self.yCoordinates = yCoordinates;
+                }
+                if let zCoordinates = message["zCoordinates"] as? String {
+                    self.zCoordinates = zCoordinates;
+                }
             }
         }
     }
@@ -188,8 +225,48 @@ class ViewController: UIViewController, WCSessionDelegate {
         AWSMobileClient.default().signOut()
         self.showSignIn()
     }
-        
     
+    func userDetails() {
+       if let userFromPool = pool.currentUser() {
+       userFromPool.getDetails().continueOnSuccessWith(block: { (task) -> Any? in
+        DispatchQueue.main.async {
+           if let error = task.error as NSError? {
+             print("Error getting user attributes from Cognito: \(error)")
+           } else {
+             let response = task.result
+             if let userAttributes = response?.userAttributes {
+               for attribute in userAttributes {
+                 if attribute.name == "email" {
+                   if let email = attribute.value {
+                     print("User Email: \(email)")
+                     self.welcomeLabel.text = "Welcome, \(email)"
+                               }
+                             }
+                           }
+                        }
+                    }
+                }
+            }
+       )}
+    }
+    
+    func generateJSON() -> String {
+        let messageDictionary = [
+        "deviceID": self.deviceId!,
+        "activeData": NSNull(),
+        "passiveData":[
+            "x" : self.xCoordinates,
+            "y" : self.yCoordinates,
+            "z" : self.zCoordinates
+        ]
+        ] as [String : Any]
+
+        let jsonData = try! JSONSerialization.data(withJSONObject: messageDictionary)
+        let jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)
+        print(jsonString!)
+        return (jsonString as String?)!
+    }
+        
 }
 
 

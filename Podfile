@@ -1,14 +1,30 @@
-source 'https://github.com/CocoaPods/Specs.git'
 # Uncomment the next line to define a global platform for your project
-platform :ios, '13.0'
+# platform :ios, '9.0'
 
 target 'Live Healthy' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-  $awsVersion = '~> 2.12.0'
-  pod 'AWSMobileClient', $awsVersion
-  pod 'AWSKinesis', $awsVersion
+   
+   use_frameworks!
 
   # Pods for Live Healthy
+  pod 'AWSUserPoolsSignIn'
+  pod 'AWSAuthUI'
+  pod 'AWSMobileClient'
+  pod 'AWSKinesis'
+end
+
+target 'Live Healthy WatchKit App' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Live Healthy WatchKit App
+
+end
+
+target 'Live Healthy WatchKit Extension' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Live Healthy WatchKit Extension
 
 end

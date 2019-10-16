@@ -14,6 +14,9 @@ import AWSKinesis
 @available(iOS 13.0, *)
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    //This is the JSON String with xyz coordinates (only passive data)
+    var json: String = ViewController().generateJSON();
+    
     var window: UIWindow?
     
     @available(iOS 13.0, *)
@@ -34,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var tasks = Array<AWSTask<AnyObject>>()
         for i in 0...100 {
             tasks.append(kinesisRecorder.saveRecord(String(format: "Hello Kinesis-%02d", i).data(using: .utf8), streamName: "live-healthy-test")!)
+            print(self.json)
         }
         AWSTask(forCompletionOfAllTasks: tasks).continueOnSuccessWith(block: { (task:AWSTask<AnyObject>) -> AWSTask<AnyObject>? in
             return kinesisRecorder.submitAllRecords()
@@ -43,6 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             else{
                 print("Data pushed to Stream")
+                print(tasks)
             }
             return nil
         })
@@ -50,6 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /**End of push data to Kinesis Stream*/
         return true
     }
+    
     func initializeAWSConnection()  {
         //Setup credentials, see your awsconfiguration.json for the "YOUR-IDENTITY-POOL-ID"
         let credentialsProvider = AWSCognitoCredentialsProvider(
@@ -58,7 +64,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let configuration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: credentialsProvider)
         AWSServiceManager.default()?.defaultServiceConfiguration = configuration
         print("Connected to AWS")
-        
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
@@ -71,18 +76,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: UISceneSession Lifecycle
     @available(iOS 13.0, *)
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
     
     @available(iOS 13.0, *)
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-    
     
 }
 
