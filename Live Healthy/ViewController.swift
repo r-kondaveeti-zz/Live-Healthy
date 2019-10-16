@@ -71,6 +71,8 @@ class ViewController: UIViewController, WCSessionDelegate {
         
         //Initialize AWSMobileClient
         initializeAWSMobileClient()
+        AWSController().initializeAWSConnection()
+        AWSController().saveRecord()
         
         if (WCSession.isSupported()) {
             let session = WCSession.default
@@ -265,7 +267,8 @@ class ViewController: UIViewController, WCSessionDelegate {
 
         let jsonData = try! JSONSerialization.data(withJSONObject: messageDictionary)
         let jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)
-        print(jsonString!)
+        print("Final JSON String \(jsonString!)")
+//        AWSController().saveRecord(jsonString)
         return (jsonString as String?)!
     }
         
