@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AWSAuthUI-AWSAuthUI.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AWSAuthUI.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>AWSCognitoIdentityProvider.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -30,6 +40,26 @@
 			<false/>
 		</dict>
 		<key>AWSMobileClient.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AWSUserPoolsSignIn-AWSUserPoolsSignIn.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AWSUserPoolsSignIn.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Live Healthy WatchKit App.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Live Healthy WatchKit Extension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

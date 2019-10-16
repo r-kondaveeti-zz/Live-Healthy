@@ -57,6 +57,8 @@ class ViewController: UIViewController, WCSessionDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
+        
         self.infoLabel.layer.shadowColor = UIColor.black.cgColor
         self.infoLabel.layer.shadowOffset = CGSize(width: 5, height: 5)
         self.infoLabel.layer.shadowRadius = 5
@@ -82,7 +84,7 @@ class ViewController: UIViewController, WCSessionDelegate {
     func initializeAWSMobileClient() {
         AWSMobileClient.default().initialize{ (UserState, error) in
             if let userState = UserState {
-            switch(UserState) {
+            switch(userState) {
             case .signedIn:
                 print("Logged In")
                 print("Cognito Identity Id (authenticated): \(AWSMobileClient.default().identityId!)")

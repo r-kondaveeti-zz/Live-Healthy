@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		059C515D046F5EF2B2827620 /* Pods_Live_Healthy_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482912414B3C60128C74E095 /* Pods_Live_Healthy_WatchKit_Extension.framework */; };
+		0DD22C1723578A310013B53A /* AWSController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD22C1623578A310013B53A /* AWSController.swift */; };
 		0DF7FFEB2354F98800DC99C5 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DF7FFEA2354F98800DC99C5 /* awsconfiguration.json */; };
 		4DBB6EA9ED2EF5028D9333FA /* Pods_Live_Healthy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E3A6F7E558DDC9A72A91A1 /* Pods_Live_Healthy.framework */; };
 		6D7E06EFE60C57F9C7094661 /* Pods_Live_Healthy_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5822EE0F16369267C08E7890 /* Pods_Live_Healthy_WatchKit_App.framework */; };
@@ -72,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		009EEB888708619F423A43CB /* Pods-Live Healthy WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Live Healthy WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-Live Healthy WatchKit App/Pods-Live Healthy WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		0DD22C1623578A310013B53A /* AWSController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSController.swift; sourceTree = "<group>"; };
 		0DF7FFEA2354F98800DC99C5 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		482912414B3C60128C74E095 /* Pods_Live_Healthy_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Live_Healthy_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5822EE0F16369267C08E7890 /* Pods_Live_Healthy_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Live_Healthy_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +169,7 @@
 				9989D2322346553600849354 /* Assets.xcassets */,
 				9989D2342346553600849354 /* LaunchScreen.storyboard */,
 				9989D2372346553600849354 /* Info.plist */,
+				0DD22C1623578A310013B53A /* AWSController.swift */,
 			);
 			path = "Live Healthy";
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9989D22E2346553500849354 /* ViewController.swift in Sources */,
+				0DD22C1723578A310013B53A /* AWSController.swift in Sources */,
 				9989D22A2346553500849354 /* AppDelegate.swift in Sources */,
 				9989D22C2346553500849354 /* SceneDelegate.swift in Sources */,
 			);

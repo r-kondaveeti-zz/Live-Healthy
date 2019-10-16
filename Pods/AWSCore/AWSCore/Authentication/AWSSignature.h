@@ -15,14 +15,14 @@
 
 #import <Foundation/Foundation.h>
 #import "AWSNetworking.h"
-
+NS_ASSUME_NONNULL_BEGIN
 FOUNDATION_EXPORT NSString *const AWSSignatureV4Algorithm;
 FOUNDATION_EXPORT NSString *const AWSSignatureV4Terminator;
-
+NS_ASSUME_NONNULL_END
 @class AWSEndpoint;
 
 @protocol AWSCredentialsProvider;
-
+NS_ASSUME_NONNULL_BEGIN
 @interface AWSSignatureSignerUtility : NSObject
 
 + (NSData *)sha256HMacWithData:(NSData *)data withKey:(NSData *)key;
@@ -83,6 +83,7 @@ FOUNDATION_EXPORT NSString *const AWSSignatureV4Terminator;
         If false, appends the X-AMZ-Security-Token to the end of the signed URL request parameters
  @return a task containing the signed URL
  */
+
 + (AWSTask<NSURL *> *)sigV4SignedURLWithRequest:(NSURLRequest * _Nonnull)request
                              credentialProvider:(id<AWSCredentialsProvider> _Nonnull)credentialsProvider
                                      regionName:(NSString * _Nonnull)regionName
@@ -106,9 +107,9 @@ FOUNDATION_EXPORT NSString *const AWSSignatureV4Terminator;
                     service:(NSString *)serviceName;
 
 + (NSString *)getSignedHeadersString:(NSDictionary *)headers;
-
+NS_ASSUME_NONNULL_END
 @end
-
+NS_ASSUME_NONNULL_BEGIN
 @interface AWSSignatureV2Signer : NSObject <AWSNetworkingRequestInterceptor>
 
 @property (nonatomic, strong, readonly) id<AWSCredentialsProvider> credentialsProvider;
@@ -120,11 +121,13 @@ FOUNDATION_EXPORT NSString *const AWSSignatureV4Terminator;
                                    endpoint:(AWSEndpoint *)endpoint;
 
 @end
+NS_ASSUME_NONNULL_END
 
 /**
  * A subclass of NSInputStream that wraps an input stream and adds
  * signature of chunk data.
  **/
+NS_ASSUME_NONNULL_BEGIN
 @interface AWSS3ChunkedEncodingInputStream : NSInputStream <NSStreamDelegate>
 
 @property (atomic, assign) int64_t totalLengthOfChunkSignatureSent;
@@ -144,3 +147,4 @@ FOUNDATION_EXPORT NSString *const AWSSignatureV4Terminator;
 + (NSUInteger)computeContentLengthForChunkedData:(NSUInteger)dataLength;
 
 @end
+NS_ASSUME_NONNULL_END

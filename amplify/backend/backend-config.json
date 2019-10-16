@@ -1,12 +1,13 @@
 {
 	"auth": {
-		"cognito69160b84": {
+		"livehealthya6318c93": {
 			"service": "Cognito",
-			"providerPlugin": "awscloudformation"
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
 		}
 	},
 	"analytics": {
-		"LiveHealthPinpoint": {
+		"livehealthymobile": {
 			"service": "Pinpoint",
 			"providerPlugin": "awscloudformation"
 		}

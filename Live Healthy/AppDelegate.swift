@@ -24,8 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         /** Initialize and push data to Kinesis Stream*/
         print("Initializing Mobile Client")
-        initializeAWSConnection()
-        AWSMobileClient.default().initialize { (userState, error) in
+        AWSController().initializeAWSConnection()
+                AWSMobileClient.default().initialize { (userState, error) in
             if let error = error {
                 print("Error initializing AWSMobileClient: \(error.localizedDescription)")
             } else if let userState = userState {
@@ -33,17 +33,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         let kinesisRecorder = AWSKinesisRecorder.default()
+//        kinesisRecorder.saveRecord(json, streamName: <#T##String!#>)
         // Create an array to store a batch of objects.
         var tasks = Array<AWSTask<AnyObject>>()
         for i in 0...100 {
             tasks.append(kinesisRecorder.saveRecord(String(format: "Hello Kinesis-%02d", i).data(using: .utf8), streamName: "live-healthy-test")!)
-            print(self.json)
+            print("Json test \(self.json)")
         }
         AWSTask(forCompletionOfAllTasks: tasks).continueOnSuccessWith(block: { (task:AWSTask<AnyObject>) -> AWSTask<AnyObject>? in
             return kinesisRecorder.submitAllRecords()
         }).continueWith(block: { (task:AWSTask<AnyObject>) -> Any? in
             if let error = task.error{
-                print("Error: \(error.localizedDescription)")
+                // Will get  Error Domain=com.amazonaws.AWSCognitoIdentityErrorDomain Code=10 if the userpoolId does not have a valid stream name.
+                print("Error: \(error)")
             }
             else{
                 print("Data pushed to Stream")
@@ -56,15 +58,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func initializeAWSConnection()  {
-        //Setup credentials, see your awsconfiguration.json for the "YOUR-IDENTITY-POOL-ID"
-        let credentialsProvider = AWSCognitoCredentialsProvider(
-            regionType: .USEast1, identityPoolId: "us-east-1:21fc92c8-6994-449d-b0cf-0cc351ba400e")
-        //Setup the service configuration
-        let configuration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: credentialsProvider)
-        AWSServiceManager.default()?.defaultServiceConfiguration = configuration
-        print("Connected to AWS")
-    }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         return AWSMobileClient.default().interceptApplication(
