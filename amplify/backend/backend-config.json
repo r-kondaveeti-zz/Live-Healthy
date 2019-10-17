@@ -4,6 +4,11 @@
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": []
+		},
+		"livehealthy6cbfea29": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
 		}
 	},
 	"analytics": {

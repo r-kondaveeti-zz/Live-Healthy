@@ -236,6 +236,7 @@ class ViewController: UIViewController, WCSessionDelegate {
            } else {
              let response = task.result
              if let userAttributes = response?.userAttributes {
+                print(userAttributes)
                for attribute in userAttributes {
                  if attribute.name == "email" {
                    if let email = attribute.value {

@@ -30,10 +30,8 @@ class AWSController {
         let kinesisRecorder = AWSKinesisRecorder.default()
         // Create an array to store a batch of objects.
         var tasks = Array<AWSTask<AnyObject>>()
-        for _ in 1...5 {
-            print("This is in save record, \(json)")
-            tasks.append(kinesisRecorder.saveRecord(String(json).data(using: .utf8), streamName: "yash-live-healthy-kinesis-stream"))
-        }
+        print("This is in save record, \(json)")
+        tasks.append(kinesisRecorder.saveRecord(String(json).data(using: .utf8), streamName: "yash-live-healthy-kinesis-stream"))
         AWSTask(forCompletionOfAllTasks: tasks).continueOnSuccessWith(block: { (task:AWSTask<AnyObject>) -> AWSTask<AnyObject>? in
             return kinesisRecorder.submitAllRecords()
         }).continueWith(block: { (task:AWSTask<AnyObject>) -> Any? in

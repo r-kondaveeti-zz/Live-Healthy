@@ -15,5 +15,12 @@
                 "livehealthya6318c93": {}
             }
         }
+    },
+    "ios": {
+        "categories": {
+            "auth": {
+                "livehealthy6cbfea29": {}
+            }
+        }
     }
 }

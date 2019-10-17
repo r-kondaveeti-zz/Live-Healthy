@@ -14,24 +14,21 @@ import AWSKinesis
 @available(iOS 13.0, *)
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    //This is the JSON String with xyz coordinates (only passive data)
-    var json: String = ViewController().generateJSON();
-    
     var window: UIWindow?
     
     @available(iOS 13.0, *)
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         /** Initialize and push data to Kinesis Stream*/
-//        print("Initializing Mobile Client")
-//        AWSController().initializeAWSConnection()
-//                AWSMobileClient.default().initialize { (userState, error) in
-//            if let error = error {
-//                print("Error initializing AWSMobileClient: \(error.localizedDescription)")
-//            } else if let userState = userState {
-//                print("AWSMobileClient initialized. Current UserState: \(userState.rawValue)")
-//            }
-//        }
+        print("Initializing Mobile Client")
+        AWSController().initializeAWSConnection()
+                AWSMobileClient.default().initialize { (userState, error) in
+            if let error = error {
+                print("Error initializing AWSMobileClient: \(error.localizedDescription)")
+            } else if let userState = userState {
+                print("AWSMobileClient initialized. Current UserState: \(userState.rawValue)")
+            }
+        }
     
         return true
     }
