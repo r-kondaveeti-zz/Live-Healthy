@@ -4,7 +4,6 @@
 //
 //  Created by Khanh Luu on 10/16/19.
 //  Copyright © 2019 Yash Tech. All rights reserved.
-//
 
 import Foundation
 import AWSMobileClient
@@ -12,8 +11,11 @@ import AWSKinesis
 @available(iOS 13.0, *)
 class AWSController {
     
-    //This is the JSON String with xyz coordinates (only passive data)
-    var json: String = ViewController().generateJSON();
+    init() {
+        self.initializeAWSConnection()
+    }
+    
+   
     func initializeAWSConnection()  {
         //Setup credentials, see your awsconfiguration.json for the "YOUR-IDENTITY-POOL-ID"
         let credentialsProvider = AWSCognitoCredentialsProvider(
@@ -23,15 +25,14 @@ class AWSController {
         AWSServiceManager.default()?.defaultServiceConfiguration = configuration
         print("Connected to AWS")
     }
-    func saveRecord()  {
-        
-        print("String JSON to be upload \(String(json))")
+    
+    func saveRecord(_ json: String)  {
         let kinesisRecorder = AWSKinesisRecorder.default()
         // Create an array to store a batch of objects.
         var tasks = Array<AWSTask<AnyObject>>()
         for _ in 1...5 {
+            print("This is in save record, \(json)")
             tasks.append(kinesisRecorder.saveRecord(String(json).data(using: .utf8), streamName: "yash-live-healthy-kinesis-stream"))
-            print("Json test \(String(json))")
         }
         AWSTask(forCompletionOfAllTasks: tasks).continueOnSuccessWith(block: { (task:AWSTask<AnyObject>) -> AWSTask<AnyObject>? in
             return kinesisRecorder.submitAllRecords()
@@ -47,6 +48,5 @@ class AWSController {
             return nil
         })
         kinesisRecorder.submitAllRecords()
-        /**End of push data to Kinesis Stream*/
     }
 }

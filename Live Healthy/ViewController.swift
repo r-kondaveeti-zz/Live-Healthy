@@ -3,7 +3,6 @@
 //
 //  Created by Radithya Reddy on 10/3/19.
 //  Copyright © 2019 Yash Tech. All rights reserved.
-//
 
 import UIKit
 import WatchConnectivity
@@ -14,6 +13,9 @@ import AWSUserPoolsSignIn
 
 @available(iOS 13.0, *)
 class ViewController: UIViewController, WCSessionDelegate {
+    
+    //AWSController
+    var awsController: AWSController!
     
     //Accelerometer coordinates
     var xCoordinates: String!
@@ -56,8 +58,9 @@ class ViewController: UIViewController, WCSessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
+        //Just initializing
+        awsController = AWSController();
+        NotificationCenter.default.addObserver(self, selector: #selector(processJSON(_: )), name: .didReceiveData, object: nil);
         
         self.infoLabel.layer.shadowColor = UIColor.black.cgColor
         self.infoLabel.layer.shadowOffset = CGSize(width: 5, height: 5)
@@ -67,12 +70,6 @@ class ViewController: UIViewController, WCSessionDelegate {
         self.backGroundLabel.clipsToBounds = true
         self.backGroundLabel.layer.cornerRadius = 10;
         self.logOutLabel.layer.cornerRadius = 10;
-  
-        
-        //Initialize AWSMobileClient
-        initializeAWSMobileClient()
-        AWSController().initializeAWSConnection()
-        AWSController().saveRecord()
         
         if (WCSession.isSupported()) {
             let session = WCSession.default
@@ -148,32 +145,32 @@ class ViewController: UIViewController, WCSessionDelegate {
                 print("This is in session on iPhone")
                 self.mealTimerLabel.text = mealValue;
                 print(mealValue)
-                    print(self.generateJSON())
             }
         }
         
         DispatchQueue.main.async {
-                if let accelerometerValue = message["accelerometer"] as? String {
-                // Run UI Updates
-                // update label
-                self.accelerometerLabel.text = accelerometerValue;
-            }
+            self.settingLabelsAndVar(message);
         }
         
-        DispatchQueue.main.async {
-            if let xCoordinates = message["xCoordinates"] as? String {
-                self.xCoordinates = xCoordinates;
-                print(xCoordinates)
-            }
-            DispatchQueue.main.async {
-                if let yCoordinates = message["yCoordinates"] as? String {
-                    self.yCoordinates = yCoordinates;
-                }
-                if let zCoordinates = message["zCoordinates"] as? String {
-                    self.zCoordinates = zCoordinates;
-                }
-            }
+      }
+    
+    func settingLabelsAndVar(_ message: [String: Any]) {
+        if let xCoordinates = message["xCoordinates"] as? String {
+            self.xCoordinates = xCoordinates;
         }
+        if let yCoordinates = message["yCoordinates"] as? String {
+            self.yCoordinates = yCoordinates;
+        }
+        if let zCoordinates = message["zCoordinates"] as? String {
+            self.zCoordinates = zCoordinates;
+        }
+        if let accelerometerValue = message["accelerometer"] as? String {
+            // Run UI Updates
+            // update label
+            self.accelerometerLabel.text = accelerometerValue;
+        }
+        NotificationCenter.default.post(name: .didReceiveData, object: nil)
+        
     }
     
 //    @IBAction func authoriseHealthKitAccess(_ sender: Any) {
@@ -268,10 +265,18 @@ class ViewController: UIViewController, WCSessionDelegate {
         let jsonData = try! JSONSerialization.data(withJSONObject: messageDictionary)
         let jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)
         print("Final JSON String \(jsonString!)")
-//        AWSController().saveRecord(jsonString)
         return (jsonString as String?)!
     }
+    
+    @objc func processJSON(_ notification: Notification) {
+        let json = self.generateJSON();
+        awsController.saveRecord(json)
+    }
         
+}
+
+extension Notification.Name {
+    static let didReceiveData = Notification.Name("didReceiveData")
 }
 
 
