@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		059C515D046F5EF2B2827620 /* Pods_Live_Healthy_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482912414B3C60128C74E095 /* Pods_Live_Healthy_WatchKit_Extension.framework */; };
+		0D7B5A602358DD330096BED0 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D7B5A5F2358DD330096BED0 /* awsconfiguration.json */; };
 		0DD22C1723578A310013B53A /* AWSController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD22C1623578A310013B53A /* AWSController.swift */; };
-		0DF7FFEB2354F98800DC99C5 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DF7FFEA2354F98800DC99C5 /* awsconfiguration.json */; };
 		4DBB6EA9ED2EF5028D9333FA /* Pods_Live_Healthy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E3A6F7E558DDC9A72A91A1 /* Pods_Live_Healthy.framework */; };
 		6D7E06EFE60C57F9C7094661 /* Pods_Live_Healthy_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5822EE0F16369267C08E7890 /* Pods_Live_Healthy_WatchKit_App.framework */; };
 		9989C4E9234F878200F1DAB2 /* MigraineInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989C4E8234F878200F1DAB2 /* MigraineInterfaceController.swift */; };
@@ -73,8 +73,8 @@
 
 /* Begin PBXFileReference section */
 		009EEB888708619F423A43CB /* Pods-Live Healthy WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Live Healthy WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-Live Healthy WatchKit App/Pods-Live Healthy WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		0D7B5A5F2358DD330096BED0 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		0DD22C1623578A310013B53A /* AWSController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSController.swift; sourceTree = "<group>"; };
-		0DF7FFEA2354F98800DC99C5 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		482912414B3C60128C74E095 /* Pods_Live_Healthy_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Live_Healthy_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5822EE0F16369267C08E7890 /* Pods_Live_Healthy_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Live_Healthy_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C1D4954095F70412C783F81 /* Pods-Live Healthy WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Live Healthy WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-Live Healthy WatchKit App/Pods-Live Healthy WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 		9989D2282346553500849354 /* Live Healthy */ = {
 			isa = PBXGroup;
 			children = (
-				0DF7FFEA2354F98800DC99C5 /* awsconfiguration.json */,
+				0D7B5A5F2358DD330096BED0 /* awsconfiguration.json */,
 				99989C23234E3EF3005B4972 /* Live Healthy.entitlements */,
 				9989D2292346553500849354 /* AppDelegate.swift */,
 				9989D22B2346553500849354 /* SceneDelegate.swift */,
@@ -329,7 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DF7FFEB2354F98800DC99C5 /* awsconfiguration.json in Resources */,
+				0D7B5A602358DD330096BED0 /* awsconfiguration.json in Resources */,
 				9989D2362346553600849354 /* LaunchScreen.storyboard in Resources */,
 				9989D2332346553600849354 /* Assets.xcassets in Resources */,
 				9989D2312346553500849354 /* Main.storyboard in Resources */,

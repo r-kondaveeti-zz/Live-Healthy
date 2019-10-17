@@ -1,18 +1,13 @@
 {
 	"auth": {
-		"livehealthya6318c93": {
-			"service": "Cognito",
-			"providerPlugin": "awscloudformation",
-			"dependsOn": []
-		},
-		"livehealthy6cbfea29": {
+		"livehealthyd8add6ac": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": []
 		}
 	},
 	"analytics": {
-		"livehealthymobile": {
+		"livehealthy": {
 			"service": "Pinpoint",
 			"providerPlugin": "awscloudformation"
 		}

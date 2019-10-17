@@ -22,5 +22,22 @@
                 "livehealthy6cbfea29": {}
             }
         }
+    },
+    "mobiledev": {
+        "awscloudformation": {
+            "AuthRoleName": "livehealthy-mobiledev-20191017122945-authRole",
+            "UnauthRoleArn": "arn:aws:iam::940353667847:role/livehealthy-mobiledev-20191017122945-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::940353667847:role/livehealthy-mobiledev-20191017122945-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "livehealthy-mobiledev-20191017122945-deployment",
+            "UnauthRoleName": "livehealthy-mobiledev-20191017122945-unauthRole",
+            "StackName": "livehealthy-mobiledev-20191017122945",
+            "StackId": "arn:aws:cloudformation:us-east-1:940353667847:stack/livehealthy-mobiledev-20191017122945/b672e610-f103-11e9-9016-0abba895ce2c"
+        },
+        "categories": {
+            "auth": {
+                "livehealthyd8add6ac": {}
+            }
+        }
     }
 }

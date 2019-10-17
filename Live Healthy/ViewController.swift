@@ -265,7 +265,7 @@ class ViewController: UIViewController, WCSessionDelegate {
 
         let jsonData = try! JSONSerialization.data(withJSONObject: messageDictionary)
         let jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)
-        print("Final JSON String \(jsonString!)")
+//        print("Final JSON String \(jsonString!)")
         return (jsonString as String?)!
     }
     
