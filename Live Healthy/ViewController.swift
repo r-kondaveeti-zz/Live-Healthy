@@ -21,6 +21,7 @@ class ViewController: UIViewController, WCSessionDelegate {
     var xCoordinates: String!
     var yCoordinates: String!
     var zCoordinates: String!
+    var timerData: String!
     
     //Unique id for the device
     let deviceId = UIDevice.current.identifierForVendor?.uuidString
@@ -61,22 +62,19 @@ class ViewController: UIViewController, WCSessionDelegate {
         //Just initializing
         awsController = AWSController();
         NotificationCenter.default.addObserver(self, selector: #selector(processJSON(_: )), name: .didReceiveData, object: nil);
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(processJSONActiveData(_: )), name: .didReceiveActiveData, object: nil);
         self.infoLabel.layer.shadowColor = UIColor.black.cgColor
         self.infoLabel.layer.shadowOffset = CGSize(width: 5, height: 5)
         self.infoLabel.layer.shadowRadius = 5
         self.infoLabel.layer.shadowOpacity = 1.0
-        
         self.backGroundLabel.clipsToBounds = true
         self.backGroundLabel.layer.cornerRadius = 10;
         self.logOutLabel.layer.cornerRadius = 10;
-        
         if (WCSession.isSupported()) {
             let session = WCSession.default
             session.delegate = self
             session.activate()
             }
-        
         self.userDetails()
         }
     
@@ -144,6 +142,8 @@ class ViewController: UIViewController, WCSessionDelegate {
                 if let mealValue =  message["timer"] as? String {
                 print("This is in session on iPhone")
                 self.mealTimerLabel.text = mealValue;
+                self.timerData = mealValue
+                NotificationCenter.default.post(name: .didReceiveActiveData, object: nil)
                 print(mealValue)
             }
         }
@@ -221,6 +221,27 @@ class ViewController: UIViewController, WCSessionDelegate {
 //               }
 //           }
 //       }
+       var accelerometerJsonDictionary: [String: Any] {
+                 return [
+                 "deviceID": self.deviceId!,
+                 "activeData": NSNull(),
+                 "passiveData":[
+                     "x" : self.xCoordinates,
+                     "y" : self.yCoordinates,
+                     "z" : self.zCoordinates
+                 ]
+                 ]
+             }
+       
+       var activeDataJsonDictionary: [String: Any] {
+           return [
+           "deviceID": self.deviceId!,
+           "passiveData": NSNull(),
+           "activeData":[
+               "mealTime" : self.timerData
+           ]
+           ]
+       }
     
     @IBAction func didPressLogOut(_ sender: Any) {
         AWSMobileClient.default().signOut()
@@ -252,17 +273,7 @@ class ViewController: UIViewController, WCSessionDelegate {
        )}
     }
     
-    func generateJSON() -> String {
-        let messageDictionary = [
-        "deviceID": self.deviceId!,
-        "activeData": NSNull(),
-        "passiveData":[
-            "x" : self.xCoordinates,
-            "y" : self.yCoordinates,
-            "z" : self.zCoordinates
-        ]
-        ] as [String : Any]
-
+    func generateJSON(_ messageDictionary: [String: Any]) -> String {
         let jsonData = try! JSONSerialization.data(withJSONObject: messageDictionary)
         let jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)
 //        print("Final JSON String \(jsonString!)")
@@ -270,15 +281,22 @@ class ViewController: UIViewController, WCSessionDelegate {
     }
     
     @objc func processJSON(_ notification: Notification) {
-        let json = self.generateJSON();
+        let json = self.generateJSON(self.accelerometerJsonDictionary);
         awsController.saveRecord(json)
     }
-        
+    
+    @objc func processJSONActiveData(_ notification: Notification) {
+        let json = self.generateJSON(self.activeDataJsonDictionary);
+        awsController.saveRecord(json)
+    }
 }
 
 extension Notification.Name {
     static let didReceiveData = Notification.Name("didReceiveData")
+    static let didReceiveActiveData = Notification.Name("didReceiveActiveData")
 }
+
+
 
 
 

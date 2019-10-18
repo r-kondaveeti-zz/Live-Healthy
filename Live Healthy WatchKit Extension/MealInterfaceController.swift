@@ -12,8 +12,6 @@ import Foundation
 import WatchConnectivity
 import CoreMotion
 
-
-
 class MealInterfaceController: WKInterfaceController, WCSessionDelegate {
     
     let session = WCSession.default;
