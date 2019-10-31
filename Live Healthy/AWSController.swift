@@ -17,7 +17,7 @@ class AWSController {
     func initializeAWSConnection()  {
         //Setup credentials, see your awsconfiguration.json for the "YOUR-IDENTITY-POOL-ID"
         let credentialsProvider = AWSCognitoCredentialsProvider(
-            regionType: .USEast1, identityPoolId: "us-east-1:ec8c24f6-b4ba-4a35-a4b3-70acea25160f")
+            regionType: .USEast1, identityPoolId: "YOUR-IDENTITY-POOL-ID")
         //Setup the service configuration
         let configuration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: credentialsProvider)
         AWSServiceManager.default()?.defaultServiceConfiguration = configuration
